@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <title>Tom Dougiamas</title>
+    {% include "meta.html" %}
     {% load static %}
+
+    <title>Tommy Dougiamas</title>
     <link rel="stylesheet" type="text/css" href="{% static "tomdougiamas.css" %}"/>
 </head>
 <body>
-<!--<video playsinline autoplay muted loop class="landing-video">
-    <source src="{% static "videos/monke.mp4" %}">
-</video>-->
 <header class="landing-header">
-    <h1>Tommy Dougiamas</h1>
-    <h2>Web Developer and Student</h2>
+    <div class="text-wrapper">
+        <h1>Tommy Dougiamas</h1>
+        <h2>Australian Web Developer and Student</h2>
+    </div>
+    <img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}">
 </header>
 <main class="row-nav">
-    <div>
-        <a>Learn more about me</a>
+    <div onclick="window.location = '{% url "about" %}'">
+        <span>About Me</span>
     </div>
-    <div>
-        <a>My projects</a>
+    <div onclick="window.location = '{% url "projects" %}'">
+        <span>My Projects</span>
+    </div>
+    <div onclick="window.location = '{% url "links" %}'">
+        <span>Links</span>
     </div>
 </main>
-
 </body>
+<script>
+    // All other methods of scrolling don't scroll smoothly
+    const downArrow = document.getElementById("down-arrow");
+
+    downArrow.addEventListener("click", () => {
+        document.querySelector(".row-nav").scrollIntoView({
+            behavior: "smooth"
+        })
+    })
+</script>
 </html>
