@@ -171,7 +171,7 @@ a {
     padding: 0 1rem;
 }
 
-.project-showcase {
+.showcase {
     display: flex;
     flex-flow: column wrap;
     align-content: center;
@@ -180,13 +180,14 @@ a {
     width: 100vw;
     padding: 2rem;
 }
-.project-showcase > div {
-    align-self: center;
-    min-width: 20rem;
-    max-width: 60rem;
+.showcase > div {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
 }
 
-.project-showcase > div > h2 {
+.showcase > div > h2 {
+    width: 100%;
     font-size : 2.5rem;
 
     background: linear-gradient(-90deg, #9a12b3, #ff6f00);
@@ -197,7 +198,9 @@ a {
     -webkit-text-fill-color: transparent;
 }
 
-.project-showcase > div > p {
+.showcase > div > p {
+    overflow-wrap: break-word;
+    max-width: 60rem;
     font-size: 1.2rem;
     text-align: justify;
     padding: 0 5rem;
