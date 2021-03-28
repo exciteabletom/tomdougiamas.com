@@ -1,5 +1,7 @@
 *-secret
 *-secret/
+*_secret/
+*_secret
 .venv/
 .idea/
 .pycache/

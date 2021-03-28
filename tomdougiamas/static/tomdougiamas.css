@@ -96,9 +96,15 @@ a {
     align-content: space-between;
 
     width: 90%;
-    margin-left: 5%;
-
     height: 95vh;
+
+    padding-left: 5%;
+    padding-top: 2.5vh;
+    padding-bottom: 2.5vh;
+
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+
 }
 
 .row-nav > div {
@@ -123,13 +129,13 @@ a {
 }
 
 .row-nav > div > span {
-    transition: transform 0.2s;
+    transition: transform 0.2s, text-shadow 1s;
 }
 
 .row-nav > div:hover > span {
-    transform: scale(1.2);
+    transform: scale(1.01);
     color: #010101;
-    text-shadow: #FF6F00 2px 2px 60px;
+    text-shadow: #111 0.75rem 0.75rem 2rem;
 }
 
 .row-nav > div:nth-child(odd) {
