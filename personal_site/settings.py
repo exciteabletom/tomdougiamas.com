@@ -9,10 +9,12 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
-PRODUCTION_ENABLED = True
+# False if env var is not set, True if it is set
+PRODUCTION_ENABLED = bool(os.environ.get("PERSONAL_SITE_PRODUCTION_MODE"))
+
 if PRODUCTION_ENABLED:
     with open('/etc/secret_key.txt') as f:
         SECRET_KEY = f.read().strip()
