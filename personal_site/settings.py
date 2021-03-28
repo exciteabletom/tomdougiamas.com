@@ -14,7 +14,11 @@ from pathlib import Path
 
 PRODUCTION_ENABLED = False
 if PRODUCTION_ENABLED:
-    from secrets.py import SECRET_KEY
+    with open('/etc/secret_key.txt') as f:
+        SECRET_KEY = f.read().strip()
+
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
 
     DEBUG = False
 
@@ -28,11 +32,6 @@ else:
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
-
 
 ALLOWED_HOSTS = []
 
