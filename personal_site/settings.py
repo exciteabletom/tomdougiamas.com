@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
-PRODUCTION_ENABLED = False
+PRODUCTION_ENABLED = True
 if PRODUCTION_ENABLED:
     with open('/etc/secret_key.txt') as f:
         SECRET_KEY = f.read().strip()
