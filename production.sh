@@ -4,4 +4,4 @@
 cd "$(dirname "$0")"
 
 # Enable production mode
-command sed -i 's/PRODUCTION_ENABLED = True/PRODUCTION_ENABLED = False/' personal_site/settings.py
+command sed -i 's/PRODUCTION_ENABLED = False/PRODUCTION_ENABLED = True/' personal_site/settings.py
