@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
-command sed -i 's/PRODUCTION_ENABLED = True/PRODUCTION_ENABLED = False/' main/settings.py
+
+# Go to project root
+cd "$(dirname "$0")"
+
+# Enable production mode
+command sed -i 's/PRODUCTION_ENABLED = True/PRODUCTION_ENABLED = False/' personal_site/settings.py

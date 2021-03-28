@@ -2,7 +2,9 @@
 *-secret/
 *_secret/
 *_secret
+secret.py
 .venv/
 .idea/
-.pycache/
+*pycache*/
 /static/
+errors.txt
