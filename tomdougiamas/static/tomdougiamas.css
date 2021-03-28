@@ -80,7 +80,7 @@ a {
 /* Down arrow */
 .down-arrow {
     width: 2rem;
-    height: auto;
+    height: 2rem;
 
     cursor: pointer;
     transition: transform 0.2s;
