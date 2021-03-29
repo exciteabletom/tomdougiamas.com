@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Start the project in production mode
 
 # Go to project root
 command cd "$(dirname "$0")" || exit 1

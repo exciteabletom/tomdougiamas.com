@@ -222,20 +222,27 @@ a {
 
     height: 35vh;
 
-    background: linear-gradient(0deg, #9a12b3, #ff6f00);
+}
+
+.links-nav > a {
+    background: repeating-linear-gradient(-20deg, #ff6f00, #9a12b3, #ff6f00);
+
+    transition: background-position 2s, transform 0.2s;
+
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     -webkit-text-fill-color: transparent;
-}
 
-.links-nav > a {
     font-size: 4rem;
     text-align: center;
     text-decoration: none;
-    transition: transform 0.2s;
+}
+.links-nav > a {
+
 }
 .links-nav > a:hover {
     transform: scale(1.05);
+    background-position: -60rem 0rem;
 }
