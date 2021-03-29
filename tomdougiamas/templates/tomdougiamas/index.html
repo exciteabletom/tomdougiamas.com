@@ -15,16 +15,16 @@
         <h1>Tommy Dougiamas</h1>
         <h2>Australian Web Developer and Student</h2>
     </div>
-    <img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}">
+    <img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
 </header>
 <main class="row-nav" id="nav">
-    <div onclick="window.location = '{% url "about" %}'">
+    <div onclick="window.location = '{% url "about" %}'" role="button" tabindex="0">
         <span>About Me</span>
     </div>
-    <div onclick="window.location = '{% url "projects" %}'">
+    <div onclick="window.location = '{% url "projects" %}'" role="button" tabindex="0">
         <span>My Projects</span>
     </div>
-    <div onclick="window.location = '{% url "links" %}'">
+    <div onclick="window.location = '{% url "links" %}'" role="button" tabindex="0">
         <span>Links</span>
     </div>
 </main>
