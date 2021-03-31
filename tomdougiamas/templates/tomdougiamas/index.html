@@ -1,42 +1,42 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-    {% include "meta.html" %}
-    {% load static %}
+	{% include "tomdougiamas/meta.html" %}
+	{% load static %}
 
-    <meta name="description" content="Tommy Dougiamas, Australian student and Python developer">
+	<meta name="description" content="Tommy Dougiamas, Australian student and Python developer">
 
-    <title>Tommy Dougiamas</title>
-    <link rel="stylesheet" type="text/css" href="{% static "tomdougiamas.css" %}"/>
+	<title>Tommy Dougiamas</title>
+	<link rel="stylesheet" type="text/css" href="{% static "tomdougiamas.css" %}"/>
 </head>
 <body>
 <header class="landing-header">
-    <div class="text-wrapper">
-        <h1>Tommy Dougiamas</h1>
-        <h2>Australian Web Developer and Student</h2>
-    </div>
-    <img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
+	<div class="text-wrapper">
+		<h1>Tommy Dougiamas</h1>
+		<h2>Australian Web Developer and Student</h2>
+	</div>
+	<img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
 </header>
 <main class="row-nav" id="nav">
-    <div onclick="window.location = '{% url "about" %}'" role="button" tabindex="0">
-        <span>About Me</span>
-    </div>
-    <div onclick="window.location = '{% url "projects" %}'" role="button" tabindex="0">
-        <span>My Projects</span>
-    </div>
-    <div onclick="window.location = '{% url "links" %}'" role="button" tabindex="0">
-        <span>Links</span>
-    </div>
+	<div onclick="window.location = '{% url "about" %}'" role="button" tabindex="0">
+		<span>About Me</span>
+	</div>
+	<div onclick="window.location = '{% url "projects" %}'" role="button" tabindex="0">
+		<span>My Projects</span>
+	</div>
+	<div onclick="window.location = '{% url "links" %}'" role="button" tabindex="0">
+		<span>Links</span>
+	</div>
 </main>
 </body>
 <script>
-    // All other methods of scrolling don't scroll smoothly
-    const downArrow = document.getElementById("down-arrow");
+	// All other methods of scrolling don't scroll smoothly
+	const downArrow = document.getElementById("down-arrow");
 
-    downArrow.addEventListener("click", () => {
-        document.querySelector(".row-nav").scrollIntoView({
-            behavior: "smooth"
-        })
-    })
+	downArrow.addEventListener("click", () => {
+		document.querySelector(".row-nav").scrollIntoView({
+			behavior: "smooth"
+		})
+	})
 </script>
 </html>

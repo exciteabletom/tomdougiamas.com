@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include "meta.html" %}
-    {% load static %}
+	{% include "tomdougiamas/meta.html" %}
+	{% load static %}
 
-    <meta name="description" content="Tommy Dougiamas' projects">
+	<meta name="description" content="Tommy Dougiamas' projects">
 
-    <title>My Projects - Tommy Dougiamas</title>
-    <link rel="stylesheet" type="text/css" href="{% static "tomdougiamas.css" %}">
+	<title>My Projects - Tommy Dougiamas</title>
 </head>
 <body>
 {% include "tomdougiamas/back_button.html" %}
 <header class="landing-header shorten-header">
-    <h1>My Projects</h1>
-    <h2><a href="https://github.com/exciteabletom/">Source code available on GitHub</a></h2>
+	<h1>My Projects</h1>
+	<h2><a href="https://github.com/exciteabletom/">Source code available on GitHub</a></h2>
 </header>
 <main class="showcase">
-    <div>
-        <h2>Digital Nook</h2>
-        <p>
-            In 2019, I founded <a href="https://digitalnook.net">digitalnook.net</a> as a way for me to learn about
-            web development. I started off by making some small utilities and JavaScript games for friends and family.
-            This helped me learn a lot about the Flask framework, SQL, Jinja2 templating, and frontend development.
-            <br><br>
-            The project has since evolved into a Sydney based Minecraft network that facilitates a small community. We
-            host Survival and Creative servers with 99% uptime, regular backups, and anti-griefing protection. This has
-            given me invaluable experience with Unix server administration.
-        </p>
-    </div>
-    <div>
-        <h2>Maze generation and solving</h2>
-        <p>
-            A simple CLI tool for generating maze images and solving them. I challenged myself to not research any maze
-            algorithms before starting this project; The result is not perfect but it sure is creative!
-            <br><br>
-            This project taught me a lot about working with images in Python using the Pillow library.
-        </p>
-    </div>
-    <div>
-        <h2>Personal Site</h2>
-        <p>
-            This website was built using all the knowledge I gained from my mistakes with Digital Nook. I learned the
-            Django framework and further honed my frontend skills to create an accessible, and mobile-friendly
-            portfolio site.
-        </p>
-    </div>
-    <div>
-        <h2>Boomer Bot</h2>
-        <p>
-            A Telegram bot that detects boomers using keywords and sends "Ok, Boomer." to the group chat.
-        </p>
-    </div>
+	<div>
+		<h2>Digital Nook</h2>
+		<p>
+			In 2019, I founded <a href="https://digitalnook.net">digitalnook.net</a> as a way for me to learn about
+			web development. I started off by making some small utilities and JavaScript games for friends and family.
+			This helped me learn a lot about the Flask framework, SQL, Jinja2 templating, and frontend development.
+			<br><br>
+			The project has since evolved into a Sydney based Minecraft network that facilitates a small community. We
+			host Survival and Creative servers with 99% uptime, regular backups, and anti-griefing protection. This has
+			given me invaluable experience with Unix server administration.
+		</p>
+	</div>
+	<div>
+		<h2>Maze generation and solving</h2>
+		<p>
+			A simple CLI tool for generating maze images and solving them. I challenged myself to not research any maze
+			algorithms before starting this project; The result is not perfect but it sure is creative!
+			<br><br>
+			This project taught me a lot about working with images in Python using the Pillow library.
+		</p>
+	</div>
+	<div>
+		<h2>Personal Site</h2>
+		<p>
+			This website was built using all the knowledge I gained from my mistakes with Digital Nook. I learned the
+			Django framework and further honed my frontend skills to create an accessible, and mobile-friendly
+			portfolio site.
+		</p>
+	</div>
+	<div>
+		<h2>Boomer Bot</h2>
+		<p>
+			A Telegram bot that detects boomers using keywords and sends "Ok, Boomer." to the group chat.
+		</p>
+	</div>
 </main>
 </body>
 </html>

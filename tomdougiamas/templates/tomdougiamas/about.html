@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include "meta.html" %}
-    {% load static %}
-    <title>About Me - Tommy Dougiamas</title>
+	{% include "tomdougiamas/meta.html" %}
+	{% load static %}
+	<title>About Me - Tommy Dougiamas</title>
 
-    <meta name="description" content="About Tommy Dougiamas">
+	<meta name="description" content="About Tommy Dougiamas">
 
-    <link rel="stylesheet" type="text/css" href="{% static "tomdougiamas.css" %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static "tomdougiamas.css" %}"/>
 </head>
 <body>
-    {% include "tomdougiamas/back_button.html" %}
-    <header class="landing-header shorten-header">
-        <h1>Hi! My name's Tommy.</h1>
-    </header>
-    <main class="showcase">
-        <div>
-            <h2>Who are you?</h2>
-            <p>
-                I am a full-time student based in Perth, Australia. I enjoy learning about web development in my free
-                time. I have a passion for open-source software, creating cool stuff, and tinkering with hardware.
-            </p>
-        </div>
-        <div>
-            <h2>How can I contact you?</h2>
-            <p>
-                Send me a message at my <a href="mailto:tom@digitalnook.net">email</a>
-            </p>
-        </div>
-    </main>
+{% include "tomdougiamas/back_button.html" %}
+<header class="landing-header shorten-header">
+	<h1>Hi! My name's Tommy.</h1>
+</header>
+<main class="showcase">
+	<div>
+		<h2>Who are you?</h2>
+		<p>
+			I am a full-time student based in Perth, Australia. I enjoy learning about web development in my free
+			time. I have a passion for open-source software, creating cool stuff, and tinkering with hardware.
+		</p>
+	</div>
+	<div>
+		<h2>How can I contact you?</h2>
+		<p>
+			Send me a message at my <a href="mailto:tom@digitalnook.net">email</a>
+		</p>
+	</div>
+</main>
 </body>
 </html>
