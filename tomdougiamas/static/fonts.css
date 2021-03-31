@@ -1,18 +1,18 @@
 html {
-    /*
-    Default font-size of 20px
-    All font sizing in the css is relative to this value using rem units.
-    */
-    font-size: 20px;
+	/*
+	Default font-size of 20px
+	All font sizing in the css is relative to this value using rem units.
+	*/
+	font-size: 20px;
 }
 
 /* For small screens make the font-size smaller */
 @media (max-width: 700px), (max-height: 500px) {
-    html {
-        font-size: 10px;
-    }
+	html {
+		font-size: 10px;
+	}
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span {
-    font-family: sans-serif;
+	font-family: sans-serif;
 }
