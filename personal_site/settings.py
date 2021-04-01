@@ -138,11 +138,11 @@ STATICFILES_FINDERS = {
 }
 COMPRESS_FILTERS = {
 	"css": [
-		"compressor.filters.cssmin.",
-		"compressor.filters.cssmin.rCSSMinFilter"
+		"compressor.filters.css_default.CssAbsoluteFilter",
+		"compressor.filters.cssmin.rCSSMinFilter",
 	],
 	"js": [
-		"compressor.filters.cssmin.rCSSMinFilter"
+		"compressor.filters.jsmin.JSMinFilter",
 	],
 }
 

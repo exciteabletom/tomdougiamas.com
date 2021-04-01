@@ -3,6 +3,8 @@
 # Go to project root
 command cd "$(dirname "$0")" || exit 1
 
+export PERSONAL_SITE_PRODUCTION_MODE=yes
+
 git pull || exit 1
 python3 manage.py migrate 
 
