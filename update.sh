@@ -9,3 +9,4 @@ python3 manage.py migrate
 # Django doesn't register if a file is deleted from project static folders
 command rm -rf ./static/
 python3 manage.py collectstatic <<< yes
+python3 manage.py compress
