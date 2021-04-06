@@ -279,61 +279,6 @@ a {
 	background-position: -60rem 0;
 }
 
-.blogs-nav {
-	display: flex;
-	flex-flow: column nowrap;
-	width: 100vw;
-}
-
-.blogs-nav > div {
-	display: flex;
-	flex-flow: column wrap;
-
-	width: 100%;
-	padding-top: 1rem;
-	padding-bottom: 1rem;
-
-	text-align: center;
-}
-
-/*noinspection CssInvalidPropertyValue*/
-.blogs-nav > div > a {
-	width: 100%;
-    padding-bottom: 0.2rem;
-
-	font-size: 3rem;
-
-	background: repeating-linear-gradient(20deg, #9a12b3, #ff6f00, #9a12b3);
-	transition: background-position 2s, transform 0.2s;
-	background-clip: text;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-moz-text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
-
-}
-
-.blogs-nav > div > a:hover {
-	transform: scale(1.05);
-	background-position: -60rem 0;
-}
-
-.blog-text {
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: space-around;
-	align-content: space-around;
-	align-items: center;
-
-    width: 100rem;
-
-    font-size: 1.1rem;
-}
-
-.blog-text > p {
-	width: 50rem
-}
-
 .credentials-form {
     display: flex;
 	flex-flow: row wrap;
@@ -349,13 +294,18 @@ a {
 }
 .credentials-form > div {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
     align-items: center;
 	box-sizing: border-box;
     width: 100%;
 	padding: 0.5rem;
 
 }
+
+.credentials-form > * {
+	outline: none;
+}
+
 .credentials-form label {
     width: 50%;
 	font-weight: bold;
@@ -377,6 +327,13 @@ a {
     font-weight: 500;
 	color: #000;
 }
+
+.credentials-form input[type="checkbox"] {
+    width: 1.5rem;
+	height: 1.5rem;
+	margin: 0 auto;
+}
+
 .credentials-form button {
 	width: 100%;
     height: 3rem;
@@ -405,4 +362,144 @@ a {
     font-weight: bold;
     font-size: 1.2rem;
 	color: #ff4444;
+}
+
+.blogs-nav {
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+}
+
+.blogs-nav > div {
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: column wrap;
+
+	width: 100%;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+
+	text-align: center;
+}
+
+/*noinspection CssInvalidPropertyValue*/
+.blogs-nav > div > a {
+	box-sizing: border-box;
+	width: 100%;
+	padding-bottom: 0.2rem;
+
+	font-size: 3rem;
+
+	background: repeating-linear-gradient(20deg, #9a12b3, #ff6f00, #9a12b3);
+	transition: background-position 2s, transform 0.2s;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+
+}
+
+.blogs-nav > div > a:hover {
+	transform: scale(1.05);
+	background-position: -60rem 0;
+}
+
+.blog-text {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-content: space-around;
+	align-items: center;
+
+	width: 100%;
+
+	font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+.blog-text > p {
+	width: 50rem
+}
+
+.comments {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100%;
+}
+
+.comments > * {
+	width: 50rem;
+	margin: 0 auto;
+}
+
+/*noinspection CssInvalidPropertyValue*/
+.comments > h2 {
+	background: linear-gradient(20deg, #ff6f00, #9a12b3);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+
+    margin-bottom: 1rem;
+}
+
+.comments > .comment > span {
+	font-weight: bold;
+}
+
+.comments > .comment > .comment-text {
+	width: 80%;
+	padding-left: 1rem;
+	padding-bottom: 1.2rem;
+	word-wrap: break-word;
+}
+
+.add-comment {
+	display: flex;
+	flex-flow: column nowrap;
+
+	margin-bottom: 2rem;
+}
+
+.add-comment textarea {
+	box-sizing: border-box;
+	width: 100%;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 1.1rem;
+	background: linear-gradient(20deg, #ff6f00, #9a12b3);
+    outline: none;
+	border: none;
+	border-radius: 0.3rem;
+	padding: 0.5rem;
+}
+
+.add-comment label {
+	height: 0;
+	visibility: hidden;
+}
+
+.add-comment button {
+	box-sizing: border-box;
+	width: 100%;
+	height: 3rem;
+	margin-top: 1rem;
+	background: linear-gradient(-40deg, #ff6f00, #9a12b3);
+
+	border: none;
+	border-radius: 0.2rem;
+
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: #000;
+
+	transition: transform 0.2s;
+}
+
+.add-comment button:hover {
+	cursor: pointer;
+	transform: scale(1.05);
 }
