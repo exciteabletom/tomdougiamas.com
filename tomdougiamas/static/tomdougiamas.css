@@ -85,8 +85,10 @@ a {
 }
 
 .shorten-header {
+	margin-top: 2.5vh;
 	height: 35vh;
-    margin-bottom: 5vh;
+	width: 80%;
+    margin-bottom: 2.5vh;
 }
 
 /* Down arrow */
@@ -199,7 +201,7 @@ a {
 	transition: transform 0.2s;
 
 	color: #fff;
-    font-size: 1.5vw;
+    font-size: 1.5rem;
 	font-weight: bold;
 }
 
@@ -268,10 +270,6 @@ a {
 	font-size: 4rem;
 	text-align: center;
 	text-decoration: none;
-}
-
-.links-nav > a {
-
 }
 
 .links-nav > a:hover {
@@ -420,7 +418,8 @@ a {
 }
 
 .blog-text > p {
-	width: 50rem
+    width: 40rem;
+	max-width: 80%;
 }
 
 .comments {
@@ -430,7 +429,7 @@ a {
 }
 
 .comments > * {
-	width: 50rem;
+	width: 60%;
 	margin: 0 auto;
 }
 
