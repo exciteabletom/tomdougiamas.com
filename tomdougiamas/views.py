@@ -69,6 +69,9 @@ def login_view(request):
             return login_error("Password too long")
 
         if register_enabled:
+            if User.objects.get(username=username):
+                return login_error("User already exists")
+
             try:
                 validate_password(password)
             except ValidationError as e:
@@ -90,14 +93,6 @@ def login_view(request):
                 return login_error("Invalid credentials")
     else:
         raise Http404
-
-
-def register(request):
-    if request.method == "POST":
-        request.POST.get
-        User.objects.create_user(username=username, password=password)
-    else:
-        return HttpResponseForbidden()
 
 
 def logout_view(request):
