@@ -16,13 +16,16 @@
 	<img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
 </header>
 <main class="row-nav" id="nav">
-	<div onclick="window.location = '{% url "about" %}'" role="button" tabindex="0">
+	<div onclick="window.location = '{% url "tomdougiamas:about" %}'" role="button" tabindex="0">
 		<span>About Me</span>
 	</div>
-	<div onclick="window.location = '{% url "projects" %}'" role="button" tabindex="0">
+    <div onclick="window.location = '{% url "tomdougiamas:blog_index" %}'" role="button" tabindex="0">
+        <span>Blog</span>
+    </div>
+	<div onclick="window.location = '{% url "tomdougiamas:projects" %}'" role="button" tabindex="0">
 		<span>My Projects</span>
 	</div>
-	<div onclick="window.location = '{% url "links" %}'" role="button" tabindex="0">
+	<div onclick="window.location = '{% url "tomdougiamas:links" %}'" role="button" tabindex="0">
 		<span>Links</span>
 	</div>
 </main>

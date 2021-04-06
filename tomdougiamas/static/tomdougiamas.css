@@ -57,10 +57,12 @@ a {
 	align-items: center;
 }
 
+/*noinspection CssInvalidPropertyValue*/
 .landing-header h1 {
 	font-size: 5rem;
 
-	padding: 1rem;
+	padding: 0;
+	margin: 2rem 0 0;
 
 	text-align: center;
 	transform: none;
@@ -83,7 +85,8 @@ a {
 }
 
 .shorten-header {
-	height: 40vh;
+	height: 35vh;
+    margin-bottom: 5vh;
 }
 
 /* Down arrow */
@@ -164,7 +167,7 @@ a {
 	align-self: center;
 }
 
-.back-button {
+#back-button {
 	display: flex;
 	flex-flow: row nowrap;
 
@@ -174,19 +177,35 @@ a {
 	transition: transform 0.2s;
 }
 
-.back-button:hover {
+#back-button:hover {
 	cursor: pointer;
 	transform: scale(1.1);
 }
 
-.back-button > img {
+#back-button > img {
 	width: 2rem;
 	height: 2rem;
 }
 
-.back-button > span {
+#back-button > span {
 	align-self: center;
 	padding: 0 1rem;
+}
+
+#login-header {
+	position: fixed;
+	right: 1rem;
+	top: 1rem;
+	transition: transform 0.2s;
+
+	color: #fff;
+    font-size: 1.5vw;
+	font-weight: bold;
+}
+
+#login-header:hover {
+	cursor: pointer;
+	transform: scale(1.1);
 }
 
 .showcase {
@@ -205,6 +224,7 @@ a {
 	align-items: flex-start;
 }
 
+/*noinspection CssInvalidPropertyValue*/
 .showcase > div > h2 {
 	width: 100%;
 	font-size: 2.5rem;
@@ -233,6 +253,7 @@ a {
 	height: 50vh;
 }
 
+/*noinspection CssInvalidPropertyValue*/
 .links-nav > a {
 	background: repeating-linear-gradient(-20deg, #ff6f00, #9a12b3, #ff6f00);
 
@@ -255,5 +276,133 @@ a {
 
 .links-nav > a:hover {
 	transform: scale(1.05);
-	background-position: -60rem 0rem;
+	background-position: -60rem 0;
+}
+
+.blogs-nav {
+	display: flex;
+	flex-flow: column nowrap;
+	width: 100vw;
+}
+
+.blogs-nav > div {
+	display: flex;
+	flex-flow: column wrap;
+
+	width: 100%;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+
+	text-align: center;
+}
+
+/*noinspection CssInvalidPropertyValue*/
+.blogs-nav > div > a {
+	width: 100%;
+    padding-bottom: 0.2rem;
+
+	font-size: 3rem;
+
+	background: repeating-linear-gradient(20deg, #9a12b3, #ff6f00, #9a12b3);
+	transition: background-position 2s, transform 0.2s;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+
+}
+
+.blogs-nav > div > a:hover {
+	transform: scale(1.05);
+	background-position: -60rem 0;
+}
+
+.blog-text {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: space-around;
+	align-content: space-around;
+	align-items: center;
+
+    width: 100rem;
+
+    font-size: 1.1rem;
+}
+
+.blog-text > p {
+	width: 50rem
+}
+
+.credentials-form {
+    display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+
+	width: 20rem;
+    height: 20rem;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	font-size: 1.3rem;
+}
+.credentials-form > div {
+	display: flex;
+	justify-content: center;
+    align-items: center;
+	box-sizing: border-box;
+    width: 100%;
+	padding: 0.5rem;
+
+}
+.credentials-form label {
+    width: 50%;
+	font-weight: bold;
+}
+
+.credentials-form input[type="text"], .credentials-form input[type="password"] {
+    width: 50%;
+    height: 3rem;
+
+	display: block;
+	box-sizing: border-box;
+	background: repeating-linear-gradient(20deg, #9a12b3, #ff6f00, #9a12b3);
+
+	border-radius: 0.2rem;
+    border: none;
+
+	text-align: center;
+	font-size: 1.1rem;
+    font-weight: 500;
+	color: #000;
+}
+.credentials-form button {
+	width: 100%;
+    height: 3rem;
+	margin-top: 1rem;
+	background: linear-gradient(-40deg, #ff6f00, #9a12b3);
+
+    border: none;
+	border-radius: 0.2rem;
+
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: #000;
+
+	transition: transform 0.2s;
+}
+
+.credentials-form button:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+.error-message {
+	text-align: center;
+
+	text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.2rem;
+	color: #ff4444;
 }
