@@ -12,14 +12,30 @@
 {% include "tomdougiamas/login_header.html" %}
 <header class="landing-header shorten-header">
     <h1>{{ blog.blog_title }}</h1>
-    <p>Published on {{ blog.pub_date }}</p>
+    <p>Published on {{ blog.pub_date }} by Tommy Dougiamas</p>
     <h2>{{ blog.blog_summary }}</h2>
 </header>
-<main class="blog-text">
-    {{ blog.blog_text | linebreaks }}
+<main>
+    <div class="blog-text">
+        {{ blog.blog_text | linebreaks }}
+    </div>
     <div class="comments">
+        {% if username %}
+            <form class="add-comment" method="post" action="{% url "tomdougiamas:add_blog_comment" blog.id %}">
+                {% csrf_token %}
+                <label for="text-input">Write a comment</label>
+                <textarea id="text-input" name="text" rows="5" placeholder="Comment as {{ username }}" maxlength="750"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        {% endif %}
+        <h2>Comments</h2>
         {% for comment in comments %}
-
+            <div class="comment">
+                <span>{{ comment.author }} - {{ comment.pub_date }}</span>
+                <div class="comment-text">
+                    {{ comment.comment_text | linebreaks }}
+                </div>
+            </div>
         {% endfor %}
     </div>
 </main>

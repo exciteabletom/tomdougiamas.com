@@ -18,7 +18,7 @@
 {% if posts_exist %}
     {% for blog in latest_blog_posts %}
         <div>
-            <a href="{% url "tomdougiamas:blog_post" blog.blog_slug %}">{{ blog.blog_title }}</a>
+            <a href="{% url "tomdougiamas:blog_post" blog.blog_slug blog.id %}">{{ blog.blog_title }}</a>
             <span>{{ blog.pub_date }}</span>
         </div>
     {% endfor %}
