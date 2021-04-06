@@ -130,11 +130,13 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATIC_ROOT = "static/"
+COMPRESS_OUTPUT_DIR = "min"
 
 STATICFILES_FINDERS = {
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
     "compressor.finders.CompressorFinder",
 }
+
 COMPRESS_FILTERS = {
     "css": [
         "compressor.filters.css_default.CssAbsoluteFilter",
