@@ -1,2 +1,2 @@
 # tomdougiamas.com
-Portfolio site
+Portfolio site and blog
