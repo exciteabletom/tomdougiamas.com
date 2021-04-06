@@ -4,4 +4,4 @@ from .models import BlogPost, BlogComment
 
 # Register your models here.
 
-admin.register(BlogPost)
+admin.site.register((BlogPost, BlogComment))

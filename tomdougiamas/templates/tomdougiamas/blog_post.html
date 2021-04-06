@@ -4,9 +4,25 @@
     {% include "tomdougiamas/meta.html" %}
     {% load static %}
 
-    <meta name="description" content="">
-    <title></title>
+    <meta name="description" content="Tommy Dougiamas' blog | {{ blog.blog_title }}">
+    <title>{{ blog.blog_title }} - Tommy Dougiamas</title>
 </head>
 <body>
+{% include "tomdougiamas/back_button.html" %}
+{% include "tomdougiamas/login_header.html" %}
+<header class="landing-header shorten-header">
+    <h1>{{ blog.blog_title }}</h1>
+    <p>Published on {{ blog.pub_date }}</p>
+    <h2>{{ blog.blog_summary }}</h2>
+</header>
+<main class="blog-text">
+    {{ blog.blog_text | linebreaks }}
+    <div class="comments">
+        {% for comment in comments %}
+
+        {% endfor %}
+    </div>
+</main>
+
 </body>
 </html>
