@@ -69,7 +69,7 @@ def login_view(request):
             return login_error("Password too long")
 
         if register_enabled:
-            if User.objects.get(username=username):
+            if User.objects.filter(username=username).exists():
                 return login_error("User already exists")
 
             try:
