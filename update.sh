@@ -8,8 +8,6 @@ export PERSONAL_SITE_PRODUCTION_MODE=yes
 
 git pull || exit 1
 
-python3 -m pip install -r requirements.txt
-
 python3 manage.py migrate 
 
 command rm -rf static
