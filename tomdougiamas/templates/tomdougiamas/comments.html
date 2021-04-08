@@ -20,7 +20,6 @@
         </div>
     {% endfor %}
 </div>
-{% compress js %}
 <script>
 "use strict";
 const errorMessage = document.getElementById("error-message");
@@ -60,4 +59,3 @@ commentFormRequest.onreadystatechange = () => {
     }
 }
 </script>
-{% endcompress %}
