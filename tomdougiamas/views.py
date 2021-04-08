@@ -50,8 +50,8 @@ def blog_post(request, blog_slug, blog_id):
     return render(request, "tomdougiamas/blog_post.html", context)
 
 
-@ratelimit(key="user", method="POST", rate="3/2m", block=True)
-@ratelimit(key="header:x-real-ip", method="POST", rate="3/m", block=True)
+@ratelimit(key="user", method="POST", rate="2/m", block=True)
+@ratelimit(key="header:x-real-ip", method="POST", rate="2/m", block=True)
 @login_required(redirect_field_name="")
 def add_comment(request, blog_id):
     if request.method == "POST":
@@ -78,7 +78,7 @@ def add_comment(request, blog_id):
         return HttpResponseNotFound()
 
 
-@ratelimit(key="header:x-real-ip", method="POST", rate="6/m", block=True)
+@ratelimit(key="header:x-real-ip", method="POST", rate="5/m", block=True)
 def login_view(request):
     def login_error(message):
         return render(request, "tomdougiamas/login.html", context={"error": message})
