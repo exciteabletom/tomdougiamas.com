@@ -1,3 +1,4 @@
+"use strict";
 function back_button_onclick() {
     // Create a back button that never takes the user away from our site.
     let curPath = window.location.pathname;

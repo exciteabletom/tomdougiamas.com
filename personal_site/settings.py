@@ -152,3 +152,5 @@ COMPRESS_FILTERS = {
 }
 
 COMPRESS_OFFLINE = True
+
+LOGIN_URL = "/blog/login/"

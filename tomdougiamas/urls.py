@@ -4,7 +4,6 @@ import django.contrib.sitemaps.views as sitemap_views
 from . import views
 from . import sitemaps
 
-
 app_name = "tomdougiamas"
 urlpatterns = [
     path("", views.index, name="index"),
