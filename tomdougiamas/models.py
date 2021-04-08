@@ -8,11 +8,14 @@ from django.db import models
 
 
 class BlogPost(models.Model):
-    blog_title = models.TextField(null=False)
-    blog_summary = models.TextField(null=False)
-    blog_text = models.TextField(null=False)
-    blog_slug = models.SlugField(unique=True, null=False)
-    pub_date = models.DateField("Date published", null=False)
+    """
+    A model for blog posts. Minimal validation constraints since a post can only be made by an admin.
+    """
+    blog_title = models.TextField()
+    blog_summary = models.TextField()
+    blog_text = models.TextField()
+    blog_slug = models.SlugField(unique=True)
+    pub_date = models.DateField("Date published")
 
     def __str__(self):
         return f"Blog: {self.blog_title}"
@@ -23,10 +26,10 @@ class BlogPost(models.Model):
 
 class BlogComment(models.Model):
     max_length = 750
-    blog = models.ForeignKey(BlogPost, on_delete=models.CASCADE, null=False)
-    author = models.ForeignKey(auth_models.User, on_delete=models.PROTECT, null=False)
-    comment_text = models.TextField(max_length=max_length, null=False)
-    pub_date = models.DateField("Date published", null=False)
+    blog = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
+    author = models.ForeignKey(auth_models.User, on_delete=models.PROTECT)
+    comment_text = models.TextField(max_length=max_length)
+    pub_date = models.DateField("Date published")
     votes = models.IntegerField(default=0)
 
     def __str__(self):
