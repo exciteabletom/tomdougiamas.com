@@ -1,0 +1,63 @@
+{% load compress %}
+{% load static %}
+<div class="comments" id="comments">
+    {% if username %}
+        <form id="add-comment" class="add-comment">
+            {% csrf_token %}
+            <label for="text-input">Write a comment</label>
+            <textarea id="text-input" name="text" rows="5" placeholder="Comment as {{ username }}" maxlength="750"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <p class="error-message" id="error-message"></p>
+    {% endif %}
+    <h2>Comments</h2>
+    {% for comment in comments %}
+        <div class="comment">
+            <span>{{ comment.author }} - {{ comment.pub_date }}</span>
+            <div class="comment-text">
+                {{ comment.comment_text | linebreaks }}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% compress js %}
+<script>
+"use strict";
+const errorMessage = document.getElementById("error-message");
+const commentForm = document.getElementById("add-comment");
+const commentFormRequest = new XMLHttpRequest();
+
+function init_request() {
+    commentFormRequest.open("POST", "{% url "tomdougiamas:add_blog_comment" blog.id %}");
+}
+init_request()
+
+
+commentForm.addEventListener("submit", event => {
+    event.preventDefault();
+    commentFormRequest.send(new FormData(commentForm));
+});
+
+commentFormRequest.onreadystatechange = () => {
+
+    if (commentFormRequest.readyState === XMLHttpRequest.DONE) {
+        if (commentFormRequest.status === 201) {
+            commentForm.reset()
+            window.location.reload();
+        // If user is ratelimited (or trying to comment without auth)
+        } else if (commentFormRequest.status === 403) {
+            errorMessage.innerText = "Please wait before commenting again."
+            init_request();
+        // If data entered did not pass validation
+        } else if (commentFormRequest.status === 422) {
+            errorMessage.innerText = commentFormRequest.responseText;
+            init_request();
+        }
+        else {
+            errorMessage.innerText = "Unknown Error";
+            init_request();
+        }
+    }
+}
+</script>
+{% endcompress %}
