@@ -21,7 +21,7 @@ class BlogCommentTests(TestCase):
             pub_date=datetime(2021, 1, 2),
         )
 
-    def test_comment_clean_method_votes_not_negative(self):
+    def test_comment_clean_votes_not_negative(self):
         comment = BlogComment(
             author=self.user,
             comment_text="",
@@ -33,7 +33,7 @@ class BlogCommentTests(TestCase):
         with self.assertRaises(ValidationError):
             comment.clean()
 
-    def test_comment_clean_method_not_newer_than_post(self):
+    def test_comment_clean_not_newer_than_post(self):
         comment = BlogComment(
             author=self.user,
             comment_text="",
@@ -44,7 +44,7 @@ class BlogCommentTests(TestCase):
         with self.assertRaises(ValidationError):
             comment.clean()
 
-    def test_comment_clean_method_text_not_too_long(self):
+    def test_comment_clean_text_not_too_long(self):
         comment = BlogComment(
             author=self.user,
             comment_text="",

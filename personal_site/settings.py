@@ -22,12 +22,16 @@ if PRODUCTION_ENABLED:
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
 
+    RATELIMIT_ENABLE = True
+
     DEBUG = False
 
 # If development environment
 else:
     # Throwaway key for development only!
     SECRET_KEY = "^vrua7@34=dh%q846*=97e(1f%^v(9#0u^%m84x$6+vauln8vj"
+
+    RATELIMIT_ENABLE = False
 
     # SECURITY WARNING: don"t run with debug turned on in production!
     DEBUG = True

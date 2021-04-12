@@ -11,6 +11,7 @@ class BlogPost(models.Model):
     """
     A model for blog posts. Minimal validation constraints since a post can only be made by an admin.
     """
+
     blog_title = models.TextField()
     blog_summary = models.TextField()
     blog_text = models.TextField()
@@ -36,7 +37,9 @@ class BlogComment(models.Model):
         return f"Blog Comment by {self.author} on '{self.blog.blog_title}': {self.comment_text[0:75]}"
 
     def clean(self):
-        if time.mktime(self.pub_date.timetuple()) < time.mktime(self.blog.pub_date.timetuple()):
+        if time.mktime(self.pub_date.timetuple()) < time.mktime(
+            self.blog.pub_date.timetuple()
+        ):
             raise ValidationError("A comment cannot be newer than a post.")
 
         if self.votes < 0:
@@ -44,7 +47,3 @@ class BlogComment(models.Model):
 
         if len(self.comment_text) > self.max_length:
             raise ValidationError("Message too long")
-
-
-
-

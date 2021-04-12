@@ -16,22 +16,16 @@
 <main>
     <form class="credentials-form" method="post">
         {% csrf_token %}
+        {% for field in form %}
         <div>
-            <label for="username">Username</label>
-            <input id="username" name="username" type="text" placeholder="Enter Username" required>
+            <label for="{{ field.name }}">{{ field.label }}</label>
+            {{ field }}
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input id="password" name="password" type="password" placeholder="Enter Password" required>
-        </div>
-
-        <div>
-            <label for="register">Register a new user</label>
-            <input id="register" name="register" type="checkbox">
-        </div>
+        {% endfor %}
         <button type="submit">Login</button>
     </form>
-    <p class="error-message">{{ error }}</p>
+
+    {% include "tomdougiamas/form_errors.html" %}
 </main>
 </body>
 </html>
