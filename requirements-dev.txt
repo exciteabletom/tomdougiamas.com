@@ -1,2 +1,2 @@
 black
-pre - commit
+pre-commit
