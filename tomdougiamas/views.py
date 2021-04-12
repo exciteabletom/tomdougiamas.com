@@ -10,6 +10,7 @@ from django.shortcuts import Http404, render, redirect
 from django.urls import reverse
 from ratelimit.decorators import ratelimit
 
+from .forms import LoginForm, CommentForm
 from .models import BlogPost, BlogComment
 
 app_name = "tomdougiamas"
@@ -42,12 +43,42 @@ def blog_index(request):
 def blog_post(request, blog_slug, blog_id):
     blog = BlogPost.objects.get(blog_slug=blog_slug)
     comments = BlogComment.objects.filter(blog_id=blog_id).order_by("pub_date")
-    context = {
-        "blog": blog,
-        "comments": comments,
-    }
+    form = CommentForm()
 
-    return render(request, "tomdougiamas/blog_post.html", context)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        user = request.user
+
+        if form.is_valid() and user.is_authenticated:
+            comment_text = form.cleaned_data.get("comment")
+            comment_text = comment_text.strip()
+
+            comment = BlogComment.objects.create(
+                blog=blog,
+                author=user,
+                comment_text=comment_text,
+                pub_date=datetime.now(),
+                votes=0,
+            )
+            try:
+                comment.clean()
+            except ValidationError as e:
+                form.add_error(None, e)
+            else:  # All form data validated
+                comment.save()
+                return redirect(
+                    reverse("tomdougiamas:blog_post", args=[blog_slug, blog_id])
+                )
+
+    return render(
+        request,
+        "tomdougiamas/blog_post.html",
+        {
+            "blog": blog,
+            "comments": comments,
+            "form": form,
+        },
+    )
 
 
 @ratelimit(key="user", method="POST", rate="2/m", block=True)
@@ -60,12 +91,16 @@ def add_comment(request, blog_id):
         text = request.POST.get("text")
         text = text.strip()
 
+        form = CommentForm(request)
+
         comment = BlogComment.objects.create(
             blog=blog, author=user, comment_text=text, pub_date=datetime.now(), votes=0
         )
 
         try:
             comment.clean()
+            if not form.is_valid():
+                raise ValidationError
         except ValidationError as e:
             return HttpResponse(f"{e.message}", status=422)
 
@@ -78,52 +113,46 @@ def add_comment(request, blog_id):
         return HttpResponseNotFound()
 
 
-@ratelimit(key="header:x-real-ip", method="POST", rate="5/m", block=True)
+@ratelimit(key="header:x-real-ip", method="POST", rate="60/h", block=True)
 def login_view(request):
-    def login_error(message):
-        return render(request, "tomdougiamas/login.html", context={"error": message})
-
-    if request.method == "GET":
-        return render(request, "tomdougiamas/login.html")
-    elif request.method == "POST":
+    if request.method == "POST":
         if request.user.is_authenticated:
-            return login_error(f"{request.user.username} you are already logged in!")
-
-        username = request.POST.get("username")
-        password = request.POST.get("password")
-        register_enabled = bool(request.POST.get("register"))
-
-        if len(username) > 30:
-            return login_error("Username too long")
-
-        if len(password) > 100:
-            return login_error("Password too long")
-
-        if register_enabled:
-            if User.objects.filter(username=username).exists():
-                return login_error("User already exists")
-
-            try:
-                validate_password(password)
-            except ValidationError as e:
-                return login_error(" ".join(e.messages))
-
-            user = User.objects.create_user(username=username, password=password)
-            user.save()
-
-            login(request, user)
             return redirect("tomdougiamas:blog_index")
-        # Logging in
-        else:
-            user = authenticate(request, username=username, password=password)
 
-            if user is not None:
-                login(request, user)
-                return redirect("tomdougiamas:blog_index")
-            else:  # redirect with error
-                return login_error("Invalid credentials")
+        form = LoginForm(request.POST)
+
+        if form.is_valid():
+            username = form.cleaned_data.get("username")
+            password = form.cleaned_data.get("password")
+            register_enabled = form.cleaned_data.get("register_enabled")
+
+            if register_enabled:
+                if not User.objects.filter(username=username):
+                    user = User.objects.create_user(
+                        username=username, password=password
+                    )
+                    user.save()
+
+                    login(request, user)
+                    return redirect("tomdougiamas:blog_index")
+
+                else:
+                    form.add_error("username", "Username already taken")
+
+            # Logging in
+            else:
+                user = authenticate(request, username=username, password=password)
+
+                if user is not None:
+                    login(request, user)
+                    return redirect("tomdougiamas:blog_index")
+                else:
+                    form.add_error(None, "Invalid credentials")
+
     else:
-        raise Http404
+        form = LoginForm()
+
+    return render(request, "tomdougiamas/login.html", context={"form": form})
 
 
 @login_required(redirect_field_name="")
