@@ -17,9 +17,10 @@ class LoginForm(forms.Form):
 
 class CommentForm(forms.Form):
     comment = forms.CharField(
-        label="Write a comment",
         max_length=750,
         min_length=1,
         validators=[validate_comment],
-        widget=forms.Textarea(attrs={"placeholder": "Write a comment"}),
+        widget=forms.Textarea(
+            attrs={"placeholder": "Write a comment", "aria-label": "Write a comment"}
+        ),
     )
