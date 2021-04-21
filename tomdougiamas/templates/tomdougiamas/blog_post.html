@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include "tomdougiamas/meta.html" %}
-    {% load static %}
+	{% include "tomdougiamas/meta.html" %}
+	{% load static %}
 
-    <meta name="description" content="Tommy Dougiamas' blog | {{ blog.blog_title }}">
-    <title>{{ blog.blog_title }} - Tommy Dougiamas</title>
+	<meta name="description" content="Tommy Dougiamas' blog | {{ blog.blog_title }}">
+	<title>{{ blog.blog_title }} - Tommy Dougiamas</title>
 </head>
 <body>
 {% include "tomdougiamas/back_button.html" %}
 {% include "tomdougiamas/login_header.html" %}
 <header class="landing-header shorten-header">
-    <h1>{{ blog.blog_title }}</h1>
-    <p>Published on {{ blog.pub_date }} by Tommy Dougiamas</p>
-    <h2>{{ blog.blog_summary }}</h2>
+	<h1>{{ blog.blog_title }}</h1>
+	<p>Published on {{ blog.pub_date }} by Tommy Dougiamas</p>
+	<h2>{{ blog.blog_summary }}</h2>
 </header>
 <main>
-    <div class="blog-text">
-        {{ blog.blog_text | linebreaks }}
-    </div>
-    {% include "tomdougiamas/comments.html" %}
+	<div class="blog-text">
+		{{ blog.blog_text | linebreaks }}
+	</div>
+	{% include "tomdougiamas/comments.html" %}
 </main>
 
 </body>

@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include "tomdougiamas/meta.html" %}
-    {% load static %}
+	{% include "tomdougiamas/meta.html" %}
+	{% load static %}
 
-    <meta name="description" content="Tommy Dougiamas' Blog">
-    <title>Blog - Tommy Dougiamas</title>
+	<meta name="description" content="Tommy Dougiamas' Blog">
+	<title>Blog - Tommy Dougiamas</title>
 </head>
 <body>
 {% include "tomdougiamas/back_button.html" %}
 {% include "tomdougiamas/login_header.html" %}
 <header class="landing-header shorten-header">
-    <h1>Tom's Blog</h1>
+	<h1>Tom's Blog</h1>
 </header>
 
 <main class="blogs-nav">
-{% if posts_exist %}
-    {% for blog in latest_blog_posts %}
-        <div>
-            <a href="{% url "tomdougiamas:blog_post" blog.blog_slug blog.id %}">{{ blog.blog_title }}</a>
-            <span>{{ blog.pub_date }}</span>
-        </div>
-    {% endfor %}
-{% else %}
-    <div>
-        <h2>No blogs yet</h2>
-    </div>
-{% endif %}
+	{% if posts_exist %}
+		{% for blog in latest_blog_posts %}
+			<div>
+				<a href="{% url "tomdougiamas:blog_post" blog.blog_slug blog.id %}">{{ blog.blog_title }}</a>
+				<span>{{ blog.pub_date }}</span>
+			</div>
+		{% endfor %}
+	{% else %}
+		<div>
+			<h2>No blogs yet</h2>
+		</div>
+	{% endif %}
 </main>
 </body>
 </html>

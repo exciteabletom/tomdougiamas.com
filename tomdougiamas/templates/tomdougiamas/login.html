@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% include "tomdougiamas/meta.html" %}
-    {% load static %}
+	{% include "tomdougiamas/meta.html" %}
+	{% load static %}
 
-    <meta name="description" content="Login to Tommy Dougiamas' blog">
-    <title>Login - Tommy Dougiamas</title>
+	<meta name="description" content="Login to Tommy Dougiamas' blog">
+	<title>Login - Tommy Dougiamas</title>
 </head>
 <body>
 {% include "tomdougiamas/back_button.html" %}
 <header class="landing-header shorten-header">
-    <h1>Blog Login</h1>
-    <h2>An account will allow you to make comments</h2>
+	<h1>Blog Login</h1>
+	<h2>An account will allow you to make comments</h2>
 </header>
 <main>
-    <form class="credentials-form" method="post">
-        {% csrf_token %}
-        {% for field in form %}
-        <div>
-            <label for="{{ field.name }}">{{ field.label }}</label>
-            {{ field }}
-        </div>
-        {% endfor %}
-        <button type="submit">Login</button>
-    </form>
+	<form class="credentials-form" method="post">
+		{% csrf_token %}
+		{% for field in form %}
+			<div>
+				<label for="{{ field.name }}">{{ field.label }}</label>
+				{{ field }}
+			</div>
+		{% endfor %}
+		<button type="submit">Login</button>
+	</form>
 
-    {% include "tomdougiamas/form_errors.html" %}
+	{% include "tomdougiamas/form_errors.html" %}
 </main>
 </body>
 </html>
