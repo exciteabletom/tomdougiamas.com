@@ -1,15 +1,14 @@
 from datetime import datetime
 
-from django.core.exceptions import ValidationError
-from django.test import TestCase
 from django.contrib.auth import models as auth_models
+from django.core.exceptions import ValidationError
+from django.db import IntegrityError
+from django.test import TestCase
 
 from .models import BlogPost, BlogComment
 
 
 # Create your tests here.
-
-
 class BlogCommentTests(TestCase):
     def setUp(self):
         self.user = auth_models.User(username="test", password="testing123!")
@@ -21,7 +20,7 @@ class BlogCommentTests(TestCase):
             pub_date=datetime(2021, 1, 2),
         )
 
-    def test_comment_clean_votes_not_negative(self):
+    def test_votes_not_negative(self):
         comment = BlogComment(
             author=self.user,
             comment_text="",
@@ -33,7 +32,7 @@ class BlogCommentTests(TestCase):
         with self.assertRaises(ValidationError):
             comment.clean()
 
-    def test_comment_clean_not_newer_than_post(self):
+    def test_not_newer_than_post(self):
         comment = BlogComment(
             author=self.user,
             comment_text="",
@@ -44,7 +43,7 @@ class BlogCommentTests(TestCase):
         with self.assertRaises(ValidationError):
             comment.clean()
 
-    def test_comment_clean_text_not_too_long(self):
+    def test_max_length(self):
         comment = BlogComment(
             author=self.user,
             comment_text="",
@@ -56,3 +55,61 @@ class BlogCommentTests(TestCase):
 
         with self.assertRaises(ValidationError):
             comment.full_clean()
+
+
+class BlogPostTests(TestCase):
+    def test_unique_slug(self):
+        post0 = BlogPost(
+            blog_title="asdf",
+            blog_text="asdf",
+            blog_summary="asdf",
+            blog_slug="not_unique",
+            pub_date=datetime.now(),
+        )
+        post1 = BlogPost(
+            blog_title="asdf",
+            blog_text="asdf",
+            blog_summary="asdf",
+            blog_slug="not_unique",
+            pub_date=datetime.now(),
+        )
+
+        with self.assertRaises(IntegrityError):
+            post0.save()
+            post1.save()
+
+    def test_title_not_null(self):
+        post = BlogPost(
+            blog_title="",
+            blog_text="asdf",
+            blog_summary="asdf",
+            blog_slug="asdf",
+            pub_date=datetime.now(),
+        )
+
+        with self.assertRaises(ValidationError):
+            post.clean()
+
+    def test_text_not_null(self):
+        post = BlogPost(
+            blog_title="asdf",
+            blog_text="",
+            blog_summary="asdf",
+            blog_slug="asdf",
+            pub_date=datetime.now(),
+        )
+
+        with self.assertRaises(ValidationError):
+            post.clean()
+
+    def test_summary_is_null(self):
+        # Summary is allowed to be null
+        post = BlogPost(
+            blog_title="asdf",
+            blog_text="asdf",
+            blog_summary="",
+            blog_slug="asdf",
+            pub_date=datetime.now(),
+        )
+
+        post.clean()

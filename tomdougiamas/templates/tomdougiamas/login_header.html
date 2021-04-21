@@ -1,6 +1,6 @@
 {% load static %}
 {% if not username %}
-    <a id="login-header" href="{% url "tomdougiamas:login" %}">Login</a>
+	<a id="login-header" href="{% url "tomdougiamas:login" %}">Login</a>
 {% else %}
-    <a id="login-header" href="{% url "tomdougiamas:logout" %}">Logout {{ username }}</a>
+	<a id="login-header" href="{% url "tomdougiamas:logout" %}">Logout {{ username }}</a>
 {% endif %}

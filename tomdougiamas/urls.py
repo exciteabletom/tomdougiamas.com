@@ -1,8 +1,8 @@
-from django.urls import path
 import django.contrib.sitemaps.views as sitemap_views
+from django.urls import path
 
-from . import views
 from . import sitemaps
+from . import views
 
 app_name = "tomdougiamas"
 urlpatterns = [

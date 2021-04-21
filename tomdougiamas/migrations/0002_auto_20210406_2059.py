@@ -4,7 +4,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("tomdougiamas", "0001_squashed_0017_alter_blogcomment_pub_date"),
     ]

@@ -3,11 +3,12 @@ from datetime import datetime
 from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
 from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import Http404, render, redirect
+from django.shortcuts import render, redirect
 from django.urls import reverse
+
+# noinspection PyPackageRequirements
 from ratelimit.decorators import ratelimit
 
 from .forms import LoginForm, CommentForm
