@@ -5,6 +5,11 @@ from django.core.exceptions import ValidationError
 from django.db import models
 
 
+class Project(models.Model):
+    project_title = models.CharField(max_length=50)
+    project_description = models.TextField(max_length=2000)
+
+
 class BlogPost(models.Model):
     """
     A model for blog posts. Minimal validation constraints since a post can only be made by an admin.
