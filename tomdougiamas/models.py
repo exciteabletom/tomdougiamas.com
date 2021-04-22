@@ -3,11 +3,15 @@ import time
 from django.contrib.auth import models as auth_models
 from django.core.exceptions import ValidationError
 from django.db import models
+from tinymce.models import HTMLField
 
 
 class Project(models.Model):
     project_title = models.CharField(max_length=50)
-    project_description = models.TextField(max_length=2000)
+    project_description = HTMLField()
+
+    def __str__(self):
+        return f"Project Entry: {self.project_title}"
 
 
 class BlogPost(models.Model):
@@ -17,7 +21,7 @@ class BlogPost(models.Model):
 
     blog_title = models.TextField()
     blog_summary = models.TextField()
-    blog_text = models.TextField()
+    blog_text = HTMLField()
     blog_slug = models.SlugField(unique=True)
     pub_date = models.DateField("Date published")
 

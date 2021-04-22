@@ -17,7 +17,9 @@
 </header>
 <main>
 	<div class="blog-text">
-		{{ blog.blog_text | linebreaks }}
+		{% autoescape off %}
+		{{ blog.blog_text}}
+		{% endautoescape %}
 	</div>
 	{% include "tomdougiamas/comments.html" %}
 </main>

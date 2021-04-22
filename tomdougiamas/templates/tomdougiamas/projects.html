@@ -18,7 +18,10 @@
 	{% for project in projects %}
 		<div>
 			<h2>{{ project.project_title }}</h2>
-			{{ project.project_description | linebreaks }}
+			<!-- autoescape is turned off here because the field contains safe HTML that shouldn't be escaped -->
+			{% autoescape off  %}
+			{{ project.project_description }}
+			{% endautoescape %}
 		</div>
 	{% endfor %}
 </main>
