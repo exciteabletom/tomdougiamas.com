@@ -26,6 +26,7 @@ a {
 }
 
 pre {
+	display: inline;
 	background-color: #222222;
 	padding: 0.75rem;
 	border-radius: 0.25rem;
