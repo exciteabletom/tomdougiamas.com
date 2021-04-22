@@ -25,6 +25,12 @@ a {
 	text-decoration: none;
 }
 
+pre {
+	background-color: #222222;
+	padding: 0.75rem;
+	border-radius: 0.25rem;
+}
+
 @keyframes text-background {
 	0% {
 		background-position: 0 50%
@@ -239,11 +245,15 @@ a {
 	-webkit-text-fill-color: transparent;
 }
 
-.showcase > div > p {
+.showcase > div > p, pre {
 	overflow-wrap: break-word;
 	max-width: 60rem;
 	font-size: 1.2rem;
-	padding: 0 5rem;
+	margin: 1rem 5rem;
+}
+
+.showcase > div > p > pre {
+	margin: 0;
 }
 
 .links-nav {
