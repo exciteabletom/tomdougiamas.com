@@ -1,3 +1,4 @@
 django
 django_compressor
 django-ratelimit
+django-tinymce

@@ -32,15 +32,15 @@
 </main>
 </body>
 {% compress js %}
-<script>
-	// All other methods of scrolling don't scroll smoothly
-	const downArrow = document.getElementById("down-arrow");
+	<script>
+		// All other methods of scrolling don't scroll smoothly
+		const downArrow = document.getElementById("down-arrow");
 
-	downArrow.addEventListener("click", () => {
-		document.querySelector(".row-nav").scrollIntoView({
-			behavior: "smooth"
+		downArrow.addEventListener("click", () => {
+			document.querySelector(".row-nav").scrollIntoView({
+				behavior: "smooth"
+			})
 		})
-	})
-</script>
+	</script>
 {% endcompress %}
 </html>
