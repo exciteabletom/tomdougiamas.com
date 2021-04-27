@@ -55,6 +55,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "personal_site.middleware.HTMLMinifyMiddleware",
+    "csp.middleware.CSPMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -76,6 +77,7 @@ TEMPLATES = [
         "OPTIONS": {
             "context_processors": [
                 "tomdougiamas.contextprocessors.current_username",
+                "csp.context_processors.nonce",
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
@@ -155,3 +157,6 @@ COMPRESS_FILTERS = {
 COMPRESS_OFFLINE = True
 
 LOGIN_URL = "/blog/login/"
+
+CSP_DEFAULT_SRC = ("self",)
+CSP_INCLUDE_NONCE_IN = ("script-src",)
