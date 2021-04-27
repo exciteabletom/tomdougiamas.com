@@ -7,18 +7,6 @@ import tinymce.models
 
 
 class Migration(migrations.Migration):
-
-    replaces = [
-        ("tomdougiamas", "0001_squashed_0017_alter_blogcomment_pub_date"),
-        ("tomdougiamas", "0002_auto_20210406_2059"),
-        ("tomdougiamas", "0003_auto_20210421_0308"),
-        ("tomdougiamas", "0004_project"),
-        ("tomdougiamas", "0005_auto_20210422_0231"),
-        ("tomdougiamas", "0004_auto_20210427_1137"),
-        ("tomdougiamas", "0006_merge_0004_auto_20210427_1137_0005_auto_20210422_0231"),
-        ("tomdougiamas", "0007_auto_20210427_1436"),
-    ]
-
     initial = True
 
     dependencies = [
