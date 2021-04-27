@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	{% include "tomdougiamas/meta.html" %}
-	{% load static %}
+    {% include "tomdougiamas/meta.html" %}
+    {% load static %}
 
-	<meta name="description" content="Tommy Dougiamas' projects">
-	<title>My Projects - Tommy Dougiamas</title>
+    <meta name="description" content="Tommy Dougiamas' projects">
+    <title>My Projects - Tommy Dougiamas</title>
 
 </head>
 <body>
 {% include "tomdougiamas/back_button.html" %}
 <header class="landing-header shorten-header">
-	<h1>My Projects</h1>
-	<h2><a href="https://github.com/exciteabletom/">Source code available on GitHub</a></h2>
+    <h1>My Projects</h1>
+    <h2><a href="https://github.com/exciteabletom/">Source code available on GitHub</a></h2>
 </header>
 <main class="showcase">
-	{% for project in projects %}
-		<div>
-			<h2>{{ project.project_title }}</h2>
-			<!-- autoescape is turned off here because the field contains safe HTML that shouldn't be escaped -->
-			{% autoescape off  %}
-			{{ project.project_description }}
-			{% endautoescape %}
-		</div>
-	{% endfor %}
+    {% for project in projects %}
+        <div>
+            <h2>{{ project.project_title }}</h2>
+            <!-- autoescape is turned off here because the field contains safe HTML that shouldn't be escaped -->
+            {% autoescape off %}
+                {{ project.project_description }}
+            {% endautoescape %}
+        </div>
+    {% endfor %}
 </main>
 </body>
 </html>

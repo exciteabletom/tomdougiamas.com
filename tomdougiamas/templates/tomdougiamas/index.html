@@ -1,46 +1,38 @@
 {% load compress %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	{% include "tomdougiamas/meta.html" %}
-	{% load static %}
+    {% include "tomdougiamas/meta.html" %}
 
-	<meta name="description" content="Tommy Dougiamas, Australian student and Python developer. exciteabletom">
-	<title>Tommy Dougiamas</title>
+    {% compress js %}
+        <script src="{% static "js/downArrow.js" %}"></script>
+    {% endcompress %}
+
+    <meta name="description" content="Tommy Dougiamas, Australian student and Python developer. exciteabletom">
+    <title>Tommy Dougiamas</title>
 </head>
 <body>
 <header class="landing-header">
-	<div class="text-wrapper">
-		<h1>Tommy Dougiamas</h1>
-		<h2>Australian Web Developer and Student</h2>
-	</div>
-	<img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
+    <div class="text-wrapper">
+        <h1>Tommy Dougiamas</h1>
+        <h2>Australian Web Developer and Student</h2>
+    </div>
+    <img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
 </header>
 <main class="row-nav" id="nav">
-	<div onclick="window.location = '{% url "tomdougiamas:about" %}'" role="button" tabindex="0">
-		<span>About Me</span>
-	</div>
-	<div onclick="window.location = '{% url "tomdougiamas:blog_index" %}'" role="button" tabindex="0">
-		<span>Blog</span>
-	</div>
-	<div onclick="window.location = '{% url "tomdougiamas:projects" %}'" role="button" tabindex="0">
-		<span>My Projects</span>
-	</div>
-	<div onclick="window.location = '{% url "tomdougiamas:links" %}'" role="button" tabindex="0">
-		<span>Links</span>
-	</div>
+    <div onclick="window.location = '{% url "tomdougiamas:about" %}'" role="button" tabindex="0">
+        <span>About Me</span>
+    </div>
+    <div onclick="window.location = '{% url "tomdougiamas:blog_index" %}'" role="button" tabindex="0">
+        <span>Blog</span>
+    </div>
+    <div onclick="window.location = '{% url "tomdougiamas:projects" %}'" role="button" tabindex="0">
+        <span>My Projects</span>
+    </div>
+    <div onclick="window.location = '{% url "tomdougiamas:links" %}'" role="button" tabindex="0">
+        <span>Links</span>
+    </div>
 </main>
 </body>
-{% compress js %}
-	<script>
-		// All other methods of scrolling don't scroll smoothly
-		const downArrow = document.getElementById("down-arrow");
-
-		downArrow.addEventListener("click", () => {
-			document.querySelector(".row-nav").scrollIntoView({
-				behavior: "smooth"
-			})
-		})
-	</script>
-{% endcompress %}
 </html>
