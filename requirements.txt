@@ -2,3 +2,4 @@ django
 django_compressor
 django-ratelimit
 django-csp
+django-tinymce
