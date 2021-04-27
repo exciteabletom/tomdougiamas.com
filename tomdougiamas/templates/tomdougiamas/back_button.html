@@ -2,10 +2,10 @@
 {% load static %}
 
 {% compress js %}
-	<script src="{% static "js/back_button.js" %}"></script>
+    <script src="{% static "js/backButton.js" %}"></script>
 {% endcompress %}
 
 <div id="back-button" onclick="back_button_onclick()" role="button" tabindex="0">
-	<img src="{% static "images/left_arrow_small.png" %}" alt="" aria-hidden="true">
-	<span>Go Back</span>
+    <img src="{% static "images/left_arrow_small.png" %}" alt="" aria-hidden="true">
+    <span>Go Back</span>
 </div>
