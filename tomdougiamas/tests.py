@@ -5,7 +5,7 @@ from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 from django.test import TestCase
 
-from .models import BlogPost, BlogComment
+from .models import BlogPost, BlogComment, Project
 
 
 # Create your tests here.
@@ -30,9 +30,9 @@ class BlogCommentTests(TestCase):
         )
 
         with self.assertRaises(ValidationError):
-            comment.clean()
+            comment.full_clean()
 
-    def test_not_newer_than_post(self):
+    def test_not_older_than_post(self):
         comment = BlogComment(
             author=self.user,
             comment_text="",
@@ -41,7 +41,7 @@ class BlogCommentTests(TestCase):
         )
 
         with self.assertRaises(ValidationError):
-            comment.clean()
+            comment.full_clean()
 
     def test_max_length(self):
         comment = BlogComment(
@@ -88,7 +88,7 @@ class BlogPostTests(TestCase):
         )
 
         with self.assertRaises(ValidationError):
-            post.clean()
+            post.full_clean()
 
     def test_text_not_null(self):
         post = BlogPost(
@@ -100,9 +100,9 @@ class BlogPostTests(TestCase):
         )
 
         with self.assertRaises(ValidationError):
-            post.clean()
+            post.full_clean()
 
-    def test_summary_is_null(self):
+    def test_summary_not_null(self):
         # Summary is allowed to be null
         post = BlogPost(
             blog_title="asdf",
@@ -112,4 +112,14 @@ class BlogPostTests(TestCase):
             pub_date=datetime.now(),
         )
 
-        post.clean()
+        post.full_clean()
+
+
+class ProjectTests(TestCase):
+    def test_title_not_too_long(self):
+        project = Project(
+            project_title="".zfill(51), project_description="asdfasdsadsad"
+        )
+
+        with self.assertRaises(ValidationError):
+            project.full_clean()

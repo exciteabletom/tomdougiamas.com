@@ -20,21 +20,10 @@ class BlogPost(models.Model):
     """
 
     blog_title = models.TextField()
-    blog_summary = models.TextField()
+    blog_summary = models.TextField(blank=True)
     blog_text = HTMLField()
     blog_slug = models.SlugField(unique=True)
     pub_date = models.DateField("Date published")
-
-    def clean(self):
-        # Summary is allowed to be empty
-        not_null_fields = (
-            self.blog_title,
-            self.blog_text,
-        )
-
-        for field in not_null_fields:
-            if field.strip() == "":
-                raise ValidationError("Some fields are empty")
 
     def __str__(self):
         return f"Blog: {self.blog_title}"
@@ -62,6 +51,3 @@ class BlogComment(models.Model):
 
         if self.votes < 0:
             raise ValidationError("Votes cannot be negative.")
-
-        if len(self.comment_text) > self.max_length:
-            raise ValidationError("Message too long")
