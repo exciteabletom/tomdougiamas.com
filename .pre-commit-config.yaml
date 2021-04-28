@@ -16,3 +16,12 @@ repos:
       - id: check-symlinks
       - id: debug-statements
       - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: django-test
+        name: django-test
+        entry: python manage.py test
+        always_run: true
+        pass_filenames: false
+        language: system
