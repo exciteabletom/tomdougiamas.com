@@ -66,7 +66,7 @@ def blog_post(request, blog_slug, blog_id):
                 votes=0,
             )
             try:
-                comment.clean()
+                comment.full_clean()
             except ValidationError as e:
                 form.add_error(None, e)
             else:  # All form data validated
@@ -103,7 +103,7 @@ def add_comment(request, blog_id):
         )
 
         try:
-            comment.clean()
+            comment.full_clean()
             if not form.is_valid():
                 raise ValidationError
         except ValidationError as e:
