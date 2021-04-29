@@ -22,6 +22,7 @@ if PRODUCTION_ENABLED:
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
     RATELIMIT_ENABLE = True
+    SECURE_SSL_REDIRECT = True
     DEBUG = False
 
 # If development environment
