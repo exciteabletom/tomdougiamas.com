@@ -102,7 +102,7 @@ class BlogPostTests(TestCase):
         with self.assertRaises(ValidationError):
             post.full_clean()
 
-    def test_summary_not_null(self):
+    def test_summary_null(self):
         # Summary is allowed to be null
         post = BlogPost(
             blog_title="asdf",
@@ -117,9 +117,7 @@ class BlogPostTests(TestCase):
 
 class ProjectTests(TestCase):
     def test_title_not_too_long(self):
-        project = Project(
-            project_title="".zfill(51), project_description="asdfasdsadsad"
-        )
+        project = Project(project_title="".zfill(51), project_description="test")
 
         with self.assertRaises(ValidationError):
             project.full_clean()

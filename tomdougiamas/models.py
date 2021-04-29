@@ -7,7 +7,7 @@ from tinymce.models import HTMLField
 
 
 class Project(models.Model):
-    project_title = models.CharField(max_length=50)
+    project_title = models.CharField(max_length=50, unique=True)
     project_description = HTMLField()
 
     def __str__(self):
@@ -15,10 +15,6 @@ class Project(models.Model):
 
 
 class BlogPost(models.Model):
-    """
-    A model for blog posts. Minimal validation constraints since a post can only be made by an admin.
-    """
-
     blog_title = models.TextField()
     blog_summary = models.TextField(blank=True)
     blog_text = HTMLField()
