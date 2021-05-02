@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     {% include "tomdougiamas/meta.html" %}
     {% load static %}
@@ -10,19 +10,18 @@
 <body>
 {% include "tomdougiamas/back_button.html" %}
 {% include "tomdougiamas/login_header.html" %}
-<header class="landing-header shorten-header">
-    <h1>{{ blog.blog_title }}</h1>
-    <p>Published on {{ blog.pub_date }} by Tommy Dougiamas</p>
-    <h2>{{ blog.blog_summary }}</h2>
-</header>
-<main>
+<article>
+    <header class="landing-header shorten-header">
+        <h1>{{ blog.blog_title }}</h1>
+        <p>Published on {{ blog.pub_date }} by Tommy Dougiamas</p>
+        <h2>{{ blog.blog_summary }}</h2>
+    </header>
     <div class="blog-text">
         {% autoescape off %}
             {{ blog.blog_text }}
         {% endautoescape %}
     </div>
-    {% include "tomdougiamas/comments.html" %}
-</main>
-
+</article>
+{% include "tomdougiamas/comments.html" %}
 </body>
 </html>

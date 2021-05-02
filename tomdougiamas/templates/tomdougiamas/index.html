@@ -20,7 +20,7 @@
     </div>
     <img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
 </header>
-<main class="row-nav" id="nav">
+<nav class="row-nav" id="nav">
     <div onclick="window.location = '{% url "tomdougiamas:about" %}'" role="button" tabindex="0">
         <span>About Me</span>
     </div>
@@ -33,6 +33,6 @@
     <div onclick="window.location = '{% url "tomdougiamas:links" %}'" role="button" tabindex="0">
         <span>Links</span>
     </div>
-</main>
+</nav>
 </body>
 </html>
