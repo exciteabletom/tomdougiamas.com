@@ -25,10 +25,10 @@ a {
 	text-decoration: none;
 }
 
-pre {
+code {
 	display: inline;
 	background-color: #222222;
-	padding: 0.75rem;
+	padding: 0.1rem;
 	border-radius: 0.25rem;
 }
 
@@ -288,83 +288,6 @@ pre {
 	background-position: -60rem 0;
 }
 
-.credentials-form {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: space-evenly;
-
-	width: 20rem;
-	height: 20rem;
-
-	margin-left: auto;
-	margin-right: auto;
-
-	font-size: 1.3rem;
-}
-
-.credentials-form > div {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	box-sizing: border-box;
-	width: 100%;
-	padding: 0.5rem;
-
-}
-
-.credentials-form > * {
-	outline: none;
-}
-
-.credentials-form label {
-	width: 50%;
-	font-weight: bold;
-}
-
-.credentials-form input[type="text"], .credentials-form input[type="password"] {
-	width: 50%;
-	height: 3rem;
-
-	display: block;
-	box-sizing: border-box;
-	background: repeating-linear-gradient(20deg, #9a12b3, #ff6f00, #9a12b3);
-
-	border-radius: 0.2rem;
-	border: none;
-
-	text-align: center;
-	font-size: 1.1rem;
-	font-weight: 500;
-	color: #000;
-}
-
-.credentials-form input[type="checkbox"] {
-	width: 1.5rem;
-	height: 1.5rem;
-	margin: 0 auto;
-}
-
-.credentials-form button {
-	width: 100%;
-	height: 3rem;
-	margin-top: 1rem;
-	background: linear-gradient(-40deg, #ff6f00, #9a12b3);
-
-	border: none;
-	border-radius: 0.2rem;
-
-	font-size: 1.3rem;
-	font-weight: bold;
-	color: #000;
-
-	transition: transform 0.2s;
-}
-
-.credentials-form button:hover {
-	cursor: pointer;
-	transform: scale(1.05);
-}
-
 .error-message {
 	text-align: center;
 
@@ -493,7 +416,12 @@ pre {
 	visibility: hidden;
 }
 
-.add-comment button {
+.add-comment button:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+}
+
+.add-comment button, .credentials-form button {
 	box-sizing: border-box;
 	width: 100%;
 	height: 3rem;
@@ -510,7 +438,65 @@ pre {
 	transition: transform 0.2s;
 }
 
-.add-comment button:hover {
+
+.credentials-form {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+
+	width: 20rem;
+	height: 20rem;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	font-size: 1.3rem;
+}
+
+.credentials-form > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 0.5rem;
+
+}
+
+.credentials-form > * {
+	outline: none;
+}
+
+.credentials-form label {
+	width: 50%;
+	font-weight: bold;
+}
+
+.credentials-form input[type="text"], .credentials-form input[type="password"] {
+	width: 50%;
+	height: 3rem;
+
+	display: block;
+	box-sizing: border-box;
+	background: repeating-linear-gradient(20deg, #9a12b3, #ff6f00, #9a12b3);
+
+	border-radius: 0.2rem;
+	border: none;
+
+	text-align: center;
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: #000;
+}
+
+.credentials-form input[type="checkbox"] {
+	width: 1.5rem;
+	height: 1.5rem;
+	margin: 0 auto;
+}
+
+.credentials-form button:hover {
 	cursor: pointer;
 	transform: scale(1.05);
 }
+
