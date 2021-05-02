@@ -1,6 +1,6 @@
 {% load compress %}
 {% load static %}
-<div class="comments" id="comments">
+<section class="comments" id="comments">
     {% if username %}
         <form id="add-comment" class="add-comment" action="#comments" method="post">
             {% csrf_token %}
@@ -13,11 +13,11 @@
     {% endif %}
     <h2>Comments</h2>
     {% for comment in comments %}
-        <div class="comment">
+        <section class="comment">
             <span>{{ comment.author }} - {{ comment.pub_date }}</span>
             <div class="comment-text">
                 {{ comment.comment_text | linebreaks }}
             </div>
-        </div>
+        </section>
     {% endfor %}
-</div>
+</section>
