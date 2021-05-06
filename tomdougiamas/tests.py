@@ -8,7 +8,6 @@ from django.test import TestCase
 from .models import BlogPost, BlogComment, Project
 
 
-# Create your tests here.
 class BlogCommentTests(TestCase):
     def setUp(self):
         self.user = auth_models.User(username="test", password="testing123!")
