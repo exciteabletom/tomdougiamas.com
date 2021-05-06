@@ -4,11 +4,11 @@
 <html lang="en">
 <head>
     {% include "tomdougiamas/meta.html" %}
-    {% compress js %}
-        <script src="{% static "js/downArrow.js" %}"></script>
-    {% endcompress %}
     <meta name="description" content="Tommy Dougiamas, Australian student and Python developer. exciteabletom">
     <title>Tommy Dougiamas</title>
+	{% compress js %}
+		<script src="{% static "js/downArrow.js" %}" defer></script>
+	{% endcompress %}
 </head>
 <body>
 <header class="landing-header">
