@@ -1,9 +1,12 @@
+{% load static %}
+{% load compress %}
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     {% include "tomdougiamas/meta.html" %}
-    {% load static %}
-
+    {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static "css/blog.scss" %}">
+    {% endcompress %}
     <meta name="description" content="Tommy Dougiamas' blog | {{ blog.blog_title }}">
     <title>{{ blog.blog_title }} - Tommy Dougiamas</title>
 </head>

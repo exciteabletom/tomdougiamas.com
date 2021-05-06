@@ -1,0 +1,17 @@
+@import "comments";
+.blog-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: center;
+  width: 100%;
+  line-height: 1.15rem;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.blog-text > p {
+  width: 40rem;
+  max-width: 80%;
+}

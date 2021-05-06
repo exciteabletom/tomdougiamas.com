@@ -1,9 +1,12 @@
+{% load static %}
+{% load compress %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     {% include "tomdougiamas/meta.html" %}
-    {% load static %}
-
+    {% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static "css/credentials.scss" %}">
+    {% endcompress %}
     <meta name="description" content="Login to Tommy Dougiamas' blog">
     <title>Login - Tommy Dougiamas</title>
 </head>
@@ -24,7 +27,6 @@
         {% endfor %}
         <button type="submit">Login</button>
     </form>
-
     {% include "tomdougiamas/form_errors.html" %}
 </main>
 </body>

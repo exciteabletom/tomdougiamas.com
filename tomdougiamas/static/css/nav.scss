@@ -1,0 +1,129 @@
+@import "variables";
+.links-nav {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-content: center;
+
+  height: 50vh;
+}
+
+/*noinspection CssInvalidPropertyValue*/
+.links-nav > a {
+  @extend .gradient-text;
+  background: $gradient-repeating;
+
+  transition: background-position 2s, transform 0.2s;
+
+  font-size: 4rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.links-nav > a:hover {
+  transform: scale(1.05);
+  background-position: -60rem 0;
+}
+
+.row-nav {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-content: space-between;
+
+  width: 90%;
+  height: 95vh;
+
+  padding-left: 5%;
+  padding-top: 2.5vh;
+  padding-bottom: 2.5vh;
+
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+
+}
+
+.row-nav > div {
+  display: flex;
+
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+
+  font-size: 3rem;
+
+  height: 60%;
+  width: 45vw;
+  border-radius: 3rem;
+
+  transition: transform 0.2s;
+}
+
+.row-nav > div:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.row-nav > div > span {
+  transition: transform 0.2s, text-shadow 1s;
+}
+
+.row-nav > div:hover > span {
+  transform: scale(1.01);
+  color: #010101;
+  text-shadow: #111 0.75rem 0.75rem 2rem;
+}
+
+.row-nav > div:nth-child(even) {
+  align-self: flex-end;
+  background: $gradient-nav;
+}
+
+.row-nav > div:nth-child(odd) {
+  align-self: flex-start;
+  background: $gradient-nav-alt;
+}
+
+
+.row-nav > div > span {
+  color: black;
+  font-weight: bold;
+  align-self: center;
+}
+
+.blogs-nav {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+.blogs-nav > div {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column wrap;
+
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  text-align: center;
+}
+
+/*noinspection CssInvalidPropertyValue*/
+.blogs-nav > div > a {
+  @extend .gradient-text;
+  background: $gradient-repeating;
+  transition: background-position 2s, transform 0.2s;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 0.2rem;
+  font-size: 3rem;
+}
+
+.blogs-nav > div > a:hover {
+  transform: scale(1.05);
+  background-position: -60rem 0;
+}
+
