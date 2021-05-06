@@ -1,11 +1,7 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
-    const downArrow = document.getElementById("down-arrow");
-
-    downArrow.addEventListener("click", () => {
-        document.querySelector("#nav").scrollIntoView({
-            behavior: "smooth"
-        })
-    })
+document.getElementById("down-arrow").addEventListener("click", () => {
+	document.querySelector("#nav").scrollIntoView({
+		behavior: "smooth"
+	})
 })
