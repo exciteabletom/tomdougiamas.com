@@ -1,3 +1,38 @@
+$gradient-color: #ff6f00;
+$gradient-color-alt: #9a12b3;
+$gradient-repeating: repeating-linear-gradient(-20deg, #ff6f00, #9a12b3, #ff6f00);
+$gradient-header: linear-gradient(90deg, $gradient-color-alt, $gradient-color);
+$gradient-header-alt: linear-gradient(-90deg, $gradient-color-alt, $gradient-color);
+$gradient-nav: linear-gradient(90deg, $gradient-color, $gradient-color-alt);
+$gradient-nav-alt: linear-gradient(-90deg, $gradient-color, $gradient-color-alt);
+
+@keyframes text-background {
+	0% {
+		background-position: 0 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0 50%
+	}
+}
+
+// noinspection CssUnknownProperty,CssInvalidPropertyValue
+.gradient-text {
+	/* Prefix-ridden Hack that allows background to only be shown on text */
+	background-clip: text;
+	-webkit-background-clip: text !important;
+	-moz-background-clip: text;
+	-moz-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+
+.text-input {
+	background: #111;
+	color: #fff;
+}
+
 html {
 	background: #000;
 	overflow-y: scroll;
@@ -32,18 +67,6 @@ code {
 	border-radius: 0.25rem;
 }
 
-@keyframes text-background {
-	0% {
-		background-position: 0 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0 50%
-	}
-}
-
 .landing-header {
 	display: flex;
 	flex-flow: column;
@@ -64,31 +87,15 @@ code {
 	align-items: center;
 }
 
-/*noinspection CssInvalidPropertyValue*/
 .landing-header h1 {
+	@extend .gradient-text;
+	animation: text-background 5s ease infinite;
+	background: $gradient-header;
+  	background-size: 400% 400%;
 	font-size: 5rem;
-
 	padding: 0;
 	margin: 2rem 0 0;
-
 	text-align: center;
-	transform: none;
-
-	background: linear-gradient(170deg, #9a12b3, #ff6f00);
-	background-size: 400% 400%;
-
-	animation: text-background 5s ease infinite;
-
-	/* Prefix-ridden Hack that allows background to only be shown on text */
-	background-clip: text;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-moz-text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
-
-	/*animation-name: rainbow-text;
-	animation-duration: 5s;
-	animation-iteration-count: infinite;*/
 }
 
 .shorten-header {
@@ -160,15 +167,16 @@ code {
 	text-shadow: #111 0.75rem 0.75rem 2rem;
 }
 
-.row-nav > div:nth-child(odd) {
-	align-self: flex-start;
-	background: linear-gradient(90deg, #9a12b3, #ff6f00);
-}
-
 .row-nav > div:nth-child(even) {
 	align-self: flex-end;
-	background: linear-gradient(-90deg, #9a12b3, #ff6f00);
+	background: $gradient-nav;
 }
+
+.row-nav > div:nth-child(odd) {
+	align-self: flex-start;
+	background: $gradient-nav-alt;
+}
+
 
 .row-nav > div > span {
 	color: black;
@@ -233,17 +241,13 @@ code {
 	align-items: flex-start;
 }
 
-/*noinspection CssInvalidPropertyValue*/
 .showcase > div > h2 {
+	@extend .gradient-text;
+	background: $gradient-header;
+
 	width: 100%;
 	font-size: 2.5rem;
 
-	background: linear-gradient(-90deg, #9a12b3, #ff6f00);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-moz-text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
 }
 
 .showcase > div > p, pre {
@@ -268,15 +272,10 @@ code {
 
 /*noinspection CssInvalidPropertyValue*/
 .links-nav > a {
-	background: repeating-linear-gradient(-20deg, #ff6f00, #9a12b3, #ff6f00);
+	@extend .gradient-text;
+  	background: $gradient-repeating;
 
 	transition: background-position 2s, transform 0.2s;
-
-	background-clip: text;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-moz-text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
 
 	font-size: 4rem;
 	text-align: center;
@@ -318,20 +317,14 @@ code {
 
 /*noinspection CssInvalidPropertyValue*/
 .blogs-nav > div > a {
+	@extend .gradient-text;
+  	background: $gradient-repeating;
+	transition: background-position 2s, transform 0.2s;
+
 	box-sizing: border-box;
 	width: 100%;
 	padding-bottom: 0.2rem;
-
 	font-size: 3rem;
-
-	background: repeating-linear-gradient(20deg, #9a12b3, #ff6f00, #9a12b3);
-	transition: background-position 2s, transform 0.2s;
-	background-clip: text;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-moz-text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
-
 }
 
 .blogs-nav > div > a:hover {
@@ -371,13 +364,8 @@ code {
 
 /*noinspection CssInvalidPropertyValue*/
 .comments > h2 {
-	background: linear-gradient(20deg, #ff6f00, #9a12b3);
-	background-clip: text;
-	-webkit-background-clip: text;
-	-moz-background-clip: text;
-	-moz-text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
-
+	@extend .gradient-text;
+  	background: $gradient-header-alt;
 	margin-bottom: 1rem;
 }
 
@@ -400,12 +388,12 @@ code {
 }
 
 .add-comment textarea {
-	box-sizing: border-box;
+	@extend .text-input;
 	width: 100%;
+	box-sizing: border-box;
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 1.1rem;
-	background: linear-gradient(20deg, #ff6f00, #9a12b3);
 	outline: none;
 	border: none;
 	border-radius: 0.3rem;
@@ -423,11 +411,13 @@ code {
 }
 
 .add-comment button, .credentials-form button {
+	background: $gradient-nav;
+	transition: transform 0.2s;
+
 	box-sizing: border-box;
 	width: 100%;
 	height: 3rem;
 	margin-top: 1rem;
-	background: linear-gradient(-40deg, #ff6f00, #9a12b3);
 
 	border: none;
 	border-radius: 0.2rem;
@@ -435,10 +425,7 @@ code {
 	font-size: 1.3rem;
 	font-weight: bold;
 	color: #000;
-
-	transition: transform 0.2s;
 }
-
 
 .credentials-form {
 	display: flex;
@@ -474,20 +461,15 @@ code {
 }
 
 .credentials-form input[type="text"], .credentials-form input[type="password"] {
+	@extend .text-input;
 	width: 50%;
 	height: 3rem;
-
-	display: block;
 	box-sizing: border-box;
-	background: repeating-linear-gradient(20deg, #9a12b3, #ff6f00, #9a12b3);
-
 	border-radius: 0.2rem;
 	border: none;
-
 	text-align: center;
 	font-size: 1.1rem;
 	font-weight: 500;
-	color: #000;
 }
 
 .credentials-form input[type="checkbox"] {
