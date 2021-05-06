@@ -4,8 +4,9 @@
 <html lang="en">
 <head>
     {% include "tomdougiamas/meta.html" %}
-    <meta name="description" content="Tommy Dougiamas, Australian student and Python developer. exciteabletom">
+    {% include "tomdougiamas/nav_meta.html" %}
     <title>Tommy Dougiamas</title>
+    <meta name="description" content="Tommy Dougiamas, Australian student and Python developer. exciteabletom">
 	{% compress js %}
 		<script src="{% static "js/downArrow.js" %}" defer></script>
 	{% endcompress %}
