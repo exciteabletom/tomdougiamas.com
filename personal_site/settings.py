@@ -170,4 +170,3 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 LOGIN_URL = "/blog/login/"
-
