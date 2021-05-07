@@ -20,7 +20,6 @@ if PRODUCTION_ENABLED:
         SECRET_KEY = f.read().strip()
 
     CSRF_COOKIE_SECURE = True
-    COMPRESS_ENABLED = True
     SESSION_COOKIE_SECURE = True
     RATELIMIT_ENABLE = True
     SECURE_SSL_REDIRECT = True
@@ -156,6 +155,7 @@ COMPRESS_FILTERS = {
     ],
 }
 
+COMPRESS_OFFLINE = True
 COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 
 TINYMCE_DEFAULT_CONFIG = {
