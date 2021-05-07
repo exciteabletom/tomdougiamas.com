@@ -25,6 +25,12 @@ if PRODUCTION_ENABLED:
     SECURE_SSL_REDIRECT = True
     DEBUG = False
 
+    ALLOWED_HOSTS = [
+        "tomdougiamas.com",
+        "localhost",
+        "127.0.0.1",
+    ]
+
 # If development environment
 else:
     # Throwaway key for development only!
@@ -33,14 +39,11 @@ else:
     # SECURITY WARNING: don"t run with debug turned on in production!
     DEBUG = True
 
+    ALLOWED_HOSTS = ["*"]
+
 # Build paths inside the project like this: BASE_DIR / "subdir".
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS = [
-    "tomdougiamas.com",
-    "localhost",
-    "127.0.0.1",
-]
 
 INSTALLED_APPS = [
     "tomdougiamas.apps.TomdougiamasConfig",
