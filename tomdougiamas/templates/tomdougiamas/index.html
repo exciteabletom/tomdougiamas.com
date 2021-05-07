@@ -5,11 +5,11 @@
 <head>
     {% include "tomdougiamas/meta.html" %}
     {% include "tomdougiamas/nav_meta.html" %}
+    {% compress js %}
+        <script src="{% static "js/downArrow.js" %}" defer></script>
+    {% endcompress %}
     <title>Tommy Dougiamas</title>
     <meta name="description" content="Tommy Dougiamas, Australian student and Python developer. exciteabletom">
-	{% compress js %}
-		<script src="{% static "js/downArrow.js" %}" defer></script>
-	{% endcompress %}
 </head>
 <body>
 <header class="landing-header">
@@ -20,17 +20,25 @@
     <img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
 </header>
 <nav class="row-nav" id="nav">
-    <div onclick="window.location = '{% url "tomdougiamas:about" %}'" role="button" tabindex="0">
-        <span>About Me</span>
+    <div>
+        <a href="{% url "tomdougiamas:about" %}">
+            <span>About Me</span>
+        </a>
     </div>
-    <div onclick="window.location = '{% url "tomdougiamas:blog_index" %}'" role="button" tabindex="0">
-        <span>Blog</span>
+    <div>
+        <a href="{% url "tomdougiamas:blog_index" %}">
+            <span>Blog</span>
+        </a>
     </div>
-    <div onclick="window.location = '{% url "tomdougiamas:projects" %}'" role="button" tabindex="0">
-        <span>My Projects</span>
+    <div>
+        <a href="{% url "tomdougiamas:projects" %}">
+            <span>My Projects</span>
+        </a>
     </div>
-    <div onclick="window.location = '{% url "tomdougiamas:links" %}'" role="button" tabindex="0">
-        <span>Links</span>
+    <div>
+        <a href="{% url "tomdougiamas:links" %}">
+            <span>Links</span>
+        </a>
     </div>
 </nav>
 </body>

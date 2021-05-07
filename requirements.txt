@@ -3,3 +3,4 @@ django_compressor
 django-ratelimit
 django-tinymce
 django-libsass
+django-csp

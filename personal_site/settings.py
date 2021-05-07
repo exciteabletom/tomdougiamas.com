@@ -57,6 +57,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "personal_site.middleware.HTMLMinifyMiddleware",
+    "csp.middleware.CSPMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -167,5 +168,7 @@ TINYMCE_DEFAULT_CONFIG = {
     "toolbar": "undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | "
     "bullist numlist outdent indent | code codesample | removeformat | help ",
 }
+
+CSP_DEFAULT_SRC = "'self'"
 
 LOGIN_URL = "/blog/login/"
