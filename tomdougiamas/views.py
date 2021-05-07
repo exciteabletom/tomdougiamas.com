@@ -18,7 +18,6 @@ app_name = "tomdougiamas"
 
 
 def index(request):
-
     return render(request, "tomdougiamas/index.html")
 
 

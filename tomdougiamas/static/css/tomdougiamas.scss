@@ -1,171 +1,172 @@
 @import "variables";
 
 html {
-	background: #000;
-	overflow-y: scroll;
-	scrollbar-width: none; /* Firefox */
-	-ms-overflow-style: none; /* Internet Explorer 10+ */
+  background: #000;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
 
-	padding-bottom: 2rem;
+  padding-bottom: 2rem;
 }
 
 html::-webkit-scrollbar {
-	width: 0;
-	height: 0;
+  width: 0;
+  height: 0;
 }
 
 body {
-	font-family: sans-serif;
-	color: #ffffff;
-	margin: 0;
+  font-family: sans-serif;
+  color: #ffffff;
+  margin: 0;
 
-	scroll-behavior: smooth
+  scroll-behavior: smooth
 }
 
 a {
-	color: #7777FF;
-	text-decoration: none;
+  color: #7777FF;
+  text-decoration: none;
 }
 
 code {
-	display: inline;
-	background-color: #222222;
-	padding: 0.1rem;
-	border-radius: 0.25rem;
+  display: inline;
+  background-color: #222222;
+  padding: 0.1rem;
+  border-radius: 0.25rem;
 }
 
 .landing-header {
-	display: flex;
-	flex-flow: column;
-	justify-content: space-evenly;
-	align-content: center;
-	align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
 
-	margin: auto;
-	height: 100vh;
-	width: 100vw;
+  margin: auto;
+  height: 100vh;
+  width: 100vw;
 }
 
 .landing-header .text-wrapper {
-	display: flex;
-	flex-flow: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 
 .landing-header h1 {
-	@extend .gradient-text;
-	animation: text-background 5s ease infinite;
-	background: $gradient-header;
-  	background-size: 400% 400%;
-	font-size: 5rem;
-	padding: 0;
-	margin: 2rem 0 0;
-	text-align: center;
+  @extend .gradient-text;
+  animation: text-background 5s ease infinite;
+  background: $gradient-header;
+  background-size: 400% 400%;
+  font-size: 5rem;
+  padding: 0;
+  margin: 2rem 0 0;
+  text-align: center;
 }
 
 .shorten-header {
-	margin-top: 2.5vh;
-	height: 35vh;
-	width: 80%;
-	margin-bottom: 2.5vh;
+  margin-top: 2.5vh;
+  height: 35vh;
+  width: 80%;
+  margin-bottom: 2.5vh;
 }
 
 /* Down arrow */
 .down-arrow {
-	width: 2rem;
-	height: 2rem;
+  width: 2rem;
+  height: 2rem;
 
-	cursor: pointer;
-	transition: transform 0.2s;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .down-arrow:hover {
-	transform: scale(1.5);
+  transform: scale(1.5);
 }
-#back-button {
-	display: flex;
-	flex-flow: row nowrap;
 
-	position: fixed;
-	left: 1rem;
-	top: 1rem;
-	transition: transform 0.2s;
+#back-button {
+  display: flex;
+  flex-flow: row nowrap;
+
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  transition: transform 0.2s;
 }
 
 #back-button:hover {
-	cursor: pointer;
-	transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 #back-button > img {
-	width: 2rem;
-	height: 2rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 #back-button > span {
-	align-self: center;
-	padding: 0 1rem;
+  align-self: center;
+  padding: 0 1rem;
 }
 
 #login-header {
-	position: fixed;
-	right: 1rem;
-	top: 1rem;
-	transition: transform 0.2s;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  transition: transform 0.2s;
 
-	color: #fff;
-	font-size: 1.5rem;
-	font-weight: bold;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 #login-header:hover {
-	cursor: pointer;
-	transform: scale(1.1);
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .showcase {
-	display: flex;
-	flex-flow: column wrap;
-	align-content: center;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
 
-	box-sizing: border-box;
-	width: 100vw;
-	padding: 2rem;
+  box-sizing: border-box;
+  width: 100vw;
+  padding: 2rem;
 }
 
 .showcase > div {
-	display: flex;
-	flex-flow: column;
-	align-items: flex-start;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
 }
 
 .showcase > div > h2 {
-	@extend .gradient-text;
-	background: $gradient-header;
+  @extend .gradient-text;
+  background: $gradient-header;
 
-	width: 100%;
-	font-size: 2.5rem;
+  width: 100%;
+  font-size: 2.5rem;
 
 }
 
 .showcase > div > p, pre {
-	overflow-wrap: break-word;
-	max-width: 60rem;
-	font-size: 1.2rem;
-	margin: 1rem 5rem;
+  overflow-wrap: break-word;
+  max-width: 60rem;
+  font-size: 1.2rem;
+  margin: 1rem 5rem;
 }
 
 .showcase > div > p > pre {
-	margin: 0;
+  margin: 0;
 }
 
 .error-message {
-	text-align: center;
+  text-align: center;
 
-	text-transform: capitalize;
-	font-weight: bold;
-	font-size: 1.2rem;
-	color: #ff4444;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #ff4444;
 }
