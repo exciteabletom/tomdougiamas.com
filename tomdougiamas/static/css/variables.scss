@@ -14,13 +14,13 @@ $gradient-nav-alt: linear-gradient(-90deg, $gradient-color, $gradient-color-alt)
     background-position: 100% 50%
   }
   100% {
-    background-position: 0 50%
+    background-position: 0 50%;
   }
 }
 
 // noinspection CssUnknownProperty,CssInvalidPropertyValue
 .gradient-text {
-  /* Prefix-ridden Hack that allows background to only be shown on text */
+  /* Prefix-ridden Hack that clips background to text border */
   background-clip: text;
   -webkit-background-clip: text !important;
   -moz-background-clip: text;

@@ -45,6 +45,7 @@
 }
 
 .row-nav > div {
+  display: block;
   font-size: 3rem;
   height: 25%;
   width: 45vw;
@@ -58,7 +59,7 @@
 }
 
 .row-nav > div:hover > a {
-  transform: scale(1.01);
+  transform: scale(1.2);
   color: #010101;
   text-shadow: #111 0.75rem 0.75rem 2rem;
 }
