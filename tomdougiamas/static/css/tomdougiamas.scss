@@ -110,22 +110,6 @@ code {
   padding: 0 1rem;
 }
 
-#login-header {
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  transition: transform 0.2s;
-
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-#login-header:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
 .showcase {
   display: flex;
   flex-flow: column wrap;

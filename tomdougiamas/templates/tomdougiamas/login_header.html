@@ -1,4 +1,8 @@
 {% load static %}
+{% load compress %}
+{% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static "css/login_header.scss" %}">
+{% endcompress %}
 {% if not username %}
     <a id="login-header" href="{% url "tomdougiamas:login" %}">Login</a>
 {% else %}
