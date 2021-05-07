@@ -8,10 +8,10 @@ export PERSONAL_SITE_PRODUCTION_MODE=yes
 
 git pull || exit 1
 
-python3 manage.py migrate 
+python3 manage.py migrate
 
 command rm -rf static
 python3 manage.py collectstatic <<< yes
-python3 manage.py compress 
+#python3 manage.py compress
 
 sudo systemctl restart tomdougiamas.com

@@ -155,8 +155,6 @@ COMPRESS_FILTERS = {
     ],
 }
 
-COMPRESS_OFFLINE = True
-
 COMPRESS_PRECOMPILERS = (("text/x-scss", "django_libsass.SassCompiler"),)
 
 TINYMCE_DEFAULT_CONFIG = {
