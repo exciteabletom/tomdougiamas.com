@@ -1,6 +1,9 @@
 <!-- This template requires comments.scss -->
 {% load compress %}
 {% load static %}
+{% compress css %}
+    <link rel="stylesheet" type="text/x-scss" href="{% static "css/comments.scss" %}">
+{% endcompress %}
 <section class="comments" id="comments">
     {% if username %}
         <form id="add-comment" class="add-comment" action="#comments" method="post">
