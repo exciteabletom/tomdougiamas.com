@@ -56,13 +56,11 @@ code {
 
 .landing-header h1 {
   @extend .gradient-text;
-  animation: text-background 5s ease infinite;
   background: $gradient-header;
+  animation: text-background 10s ease infinite;
   background-size: 400% 400%;
   font-size: 5rem;
-  padding: 0;
-  margin: 2rem 0 0;
-  text-align: center;
+  margin: 2rem 0;
 }
 
 .shorten-header {
