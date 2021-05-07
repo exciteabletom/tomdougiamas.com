@@ -4,11 +4,11 @@
 <html lang="en">
 <head>
     {% include "tomdougiamas/meta.html" %}
-    {% compress css %}
-    <link rel="stylesheet" type="text/x-scss" href="{% static "css/credentials.scss" %}">
-    {% endcompress %}
-    <meta name="description" content="Login to Tommy Dougiamas' blog">
     <title>Login - Tommy Dougiamas</title>
+    <meta name="description" content="Login to Tommy Dougiamas' blog">
+    {% compress css %}
+        <link rel="stylesheet" type="text/x-scss" href="{% static "css/credentials.scss" %}">
+    {% endcompress %}
 </head>
 <body>
 {% include "tomdougiamas/back_button.html" %}
