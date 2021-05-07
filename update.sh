@@ -12,6 +12,6 @@ python3 manage.py migrate
 
 command rm -rf static
 python3 manage.py collectstatic <<< yes
-#python3 manage.py compress
+python3 manage.py compress
 
 sudo systemctl restart tomdougiamas.com
