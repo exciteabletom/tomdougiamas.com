@@ -3,7 +3,7 @@
 # Go to project root
 command cd "$(dirname "$0")" || exit 1
 
-if ! find . | grep --quiet .venv/bin/activate; then
+if ! find .venv/bin/activate; then
   python3 -m venv .venv
 fi
 
