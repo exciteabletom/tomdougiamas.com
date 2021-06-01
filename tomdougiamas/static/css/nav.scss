@@ -13,7 +13,6 @@
 .links-nav > a {
   @extend .gradient-text;
   background: $gradient-repeating;
-
   transition: background-position 2s, transform 0.2s;
 
   font-size: 4rem;
