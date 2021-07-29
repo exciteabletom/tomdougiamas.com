@@ -34,7 +34,7 @@ def projects(request):
 
 
 def links(request):
-    context = {"links": Link.objects.order_by("title")}
+    context = {"links": Link.objects.all()}
     return render(request, "tomdougiamas/links.html", context)
 
 
