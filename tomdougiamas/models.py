@@ -47,3 +47,12 @@ class BlogComment(models.Model):
 
         if self.votes < 0:
             raise ValidationError("Votes cannot be negative.")
+
+
+class Link(models.Model):
+    title = models.CharField(max_length=30)
+    # URLField is not used because it doesn't allow "mailto:" url scheme
+    url = models.CharField(max_length=2000)
+
+    def __str__(self):
+        return f"External link: {self.title} ({self.url})"
