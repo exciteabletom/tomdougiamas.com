@@ -26,7 +26,7 @@ def about(request):
 
 
 def projects(request):
-    project_items = Project.objects.all()
+    project_items = reversed(Project.objects.order_by("project_date"))
 
     return render(
         request, "tomdougiamas/projects.html", context={"projects": project_items}

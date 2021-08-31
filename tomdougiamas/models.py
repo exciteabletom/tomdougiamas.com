@@ -1,3 +1,4 @@
+import datetime
 import time
 
 from django.contrib.auth import models as auth_models
@@ -9,6 +10,7 @@ from tinymce.models import HTMLField
 class Project(models.Model):
     project_title = models.CharField(max_length=50, unique=True)
     project_description = HTMLField()
+    project_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"Project Entry: {self.project_title}"
