@@ -12,7 +12,7 @@ from django.urls import reverse
 from ratelimit.decorators import ratelimit
 
 from .forms import LoginForm, CommentForm
-from .models import BlogPost, BlogComment, Project
+from .models import BlogPost, BlogComment, Project, Link
 
 app_name = "tomdougiamas"
 
@@ -34,7 +34,8 @@ def projects(request):
 
 
 def links(request):
-    return render(request, "tomdougiamas/links.html")
+    context = {"links": Link.objects.all()}
+    return render(request, "tomdougiamas/links.html", context)
 
 
 def blog_index(request):
