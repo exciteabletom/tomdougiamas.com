@@ -13,6 +13,7 @@
 </head>
 <body>
 <header class="landing-header">
+	{% include "tomdougiamas/face_header.html" %}
     <div class="text-wrapper">
         <h1>Tommy Dougiamas</h1>
         <h2>Web Developer and Student</h2>
@@ -20,6 +21,7 @@
     <img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
 </header>
 <nav class="row-nav" id="nav">
+	<!--
     <div>
         <a href="{% url "tomdougiamas:about" %}">
             <span>About Me</span>
@@ -29,7 +31,7 @@
         <a href="{% url "tomdougiamas:blog_index" %}">
             <span>Blog</span>
         </a>
-    </div>
+    </div> -->
     <div>
         <a href="{% url "tomdougiamas:projects" %}">
             <span>My Projects</span>

@@ -6,6 +6,12 @@ $gradient-header-alt: linear-gradient(90deg, $gradient-color-alt, $gradient-colo
 $gradient-nav: linear-gradient(90deg, $gradient-color, $gradient-color-alt);
 $gradient-nav-alt: linear-gradient(-90deg, $gradient-color, $gradient-color-alt);
 
+@keyframes spin {
+  0% { transform: rotate(0deg) scale(1.0) }
+  50% { transform: rotate(180deg) scale(1.3) }
+  100% { transform: rotate(360deg) scale(1.0) }
+}
+
 @keyframes text-background {
   0% {
     background-position: 0 50%
