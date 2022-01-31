@@ -14,5 +14,20 @@ html {
 }
 
 h1, h2, h3, h4, h5, h6, p, a, span {
-  font-family: sans-serif;
+  font-family: ReadexPro, sans-serif;
 }
+
+@font-face {
+  src: url("/static/font/ReadexPro-Regular.ttf");
+  font-family: ReadexPro;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  src: url("/static/font/ReadexPro-Bold.ttf");
+  font-family: ReadexPro;
+  font-weight: bold;
+  font-display: swap;
+}
+
