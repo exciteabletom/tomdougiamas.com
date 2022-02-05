@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6, p, a, span {
        url("/static/font/ReadexPro-Regular.ttf") format("ttf");
   font-family: ReadexPro;
   font-weight: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -30,6 +30,6 @@ h1, h2, h3, h4, h5, h6, p, a, span {
        url("/static/font/ReadexPro-Bold.ttf") format("ttf");
   font-family: ReadexPro;
   font-weight: bold;
-  font-display: swap;
+  font-display: block;
 }
 
