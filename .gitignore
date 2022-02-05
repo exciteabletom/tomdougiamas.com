@@ -9,3 +9,4 @@ secret.py
 *pycache*/
 /static/
 errors.txt
+*.pdf
