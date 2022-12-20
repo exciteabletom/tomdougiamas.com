@@ -104,13 +104,17 @@ code {
 
   box-sizing: border-box;
   width: 100vw;
-  padding: 2rem;
+
+  padding: 4rem;
 }
 
 .showcase > div {
   display: flex;
   flex-flow: column;
-  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 40rem;
+  align-items: center;
 }
 
 .showcase > div > h2 {

@@ -19,33 +19,9 @@
     </div>
     <img class="down-arrow" id="down-arrow" alt="" src="{% static "images/down_arrow_small.png" %}" aria-hidden="true">
 </header>
-<nav class="row-nav" id="nav">
-	<!--
-    <div>
-        <a href="{% url "tomdougiamas:about" %}">
-            <span>About Me</span>
-        </a>
-    </div>
-    <div>
-        <a href="{% url "tomdougiamas:blog_index" %}">
-            <span>Blog</span>
-        </a>
-    </div> -->
-	<div>
-		<a href="/static/Tommy_Dougiamas_Resume.pdf">
-			<span>Resume</span>
-		</a>
-	</div>
-    <div>
-        <a href="{% url "tomdougiamas:projects" %}">
-            <span>Projects</span>
-        </a>
-    </div>
-    <div>
-        <a href="{% url "tomdougiamas:links" %}">
-            <span>Links</span>
-        </a>
-    </div>
-</nav>
+<main>
+    {% include "tomdougiamas/projects.html" %}
+    {% include "tomdougiamas/links.html" %}
+</main>
 </body>
 </html>

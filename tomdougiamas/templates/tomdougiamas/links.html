@@ -1,21 +1,8 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% include "tomdougiamas/meta.html" %}
-    {% include "tomdougiamas/nav_meta.html" %}
-    <title>Links - Tommy Dougiamas</title>
-    <meta name="description" content="Tommy Dougiamas' links">
-</head>
-<body>
-{% include "tomdougiamas/back_button.html" %}
 <header class="landing-header shorten-header">
-    <h1>My Links</h1>
+    <h1>Contact</h1>
 </header>
 <nav class="links-nav">
-	{% for link in links %}
-    <a href="{{ link.url }}" rel="external">{{ link.title }}</a>
-	{% endfor %}
+    {% for link in links %}
+        <a href="{{ link.url }}" rel="external">{{ link.title }}</a>
+    {% endfor %}
 </nav>
-</body>
-</html>

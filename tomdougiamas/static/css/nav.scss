@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-content: center;
 
-  height: 50vh;
+  height: 60vh;
 }
 
 /*noinspection CssInvalidPropertyValue*/
@@ -64,12 +64,10 @@
 }
 
 .row-nav > div:nth-child(even) {
-  align-self: flex-end;
   background: $gradient-nav;
 }
 
 .row-nav > div:nth-child(odd) {
-  align-self: flex-start;
   background: $gradient-nav-alt;
 }
 
